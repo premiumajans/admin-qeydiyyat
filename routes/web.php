@@ -7,9 +7,13 @@ use App\Http\Controllers\Backend\SettingController as BSetting;
 use App\Http\Controllers\Backend\SiteLanguageController as BSiteLan;
 use App\Http\Controllers\Backend\AdminController as BAdmin;
 use App\Http\Controllers\Backend\InformationController as BInformation;
+use App\Http\Controllers\Backend\PackageComponentController;
+use App\Http\Controllers\Backend\PackageController;
 use App\Http\Controllers\Backend\ReportController as BReport;
 use App\Http\Controllers\Backend\PermissionController as BPermission;
+use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\StatusController as BStatus;
+use App\Http\Controllers\Backend\WhyChooseUsController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +43,16 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'auth:san
     Route::resource('/users', BAdmin::class);
     Route::resource('/my-informations', BInformation::class);
     Route::resource('/permissions', BPermission::class);
+    Route::resource('/service', ServiceController::class)->except(['create','store','show']);
+    Route::resource('/why-choose-us', WhyChooseUsController::class)->except('show');
+    Route::resource('/packages', PackageController::class)->except('show');
+    Route::resource('/package-components', PackageComponentController::class)->except('show');
+
+    //Delete
+    Route::get('/service/{id}', [ServiceController::class, 'destroy'])->name('service.destroy');
+    Route::get('/why-choose-us/{id}', [WhyChooseUsController::class, 'destroy'])->name('why-choose-us.destroy');
+    Route::get('/packages/{id}', [PackageController::class, 'destroy'])->name('packages.destroy');
+    Route::get('/package-components/{id}', [PackageComponentController::class, 'destroy'])->name('package-components.destroy');
 
     Route::get('/clear', function () {
         Artisan::call('cache:clear');

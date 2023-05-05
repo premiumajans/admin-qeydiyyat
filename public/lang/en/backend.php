@@ -48,6 +48,7 @@ return [
     'phone' => 'Phone',
     'message' => 'Message',
     'about' => 'About us',
+    'packages' => 'Packages',
     'copyright' => 'All Copyright Reserved to',
     'home-page' => 'Home',
     'load-more' => 'More',

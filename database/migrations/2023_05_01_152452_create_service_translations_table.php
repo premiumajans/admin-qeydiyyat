@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('service_translations', function (Blueprint $table) {
@@ -18,9 +13,9 @@ return new class extends Migration
             $table->foreignId('service_id')
                 ->constrained()
                 ->onDelete('cascade');
-            $table->string('main_title');
             $table->string('title');
             $table->text('content');
+            $table->string('alt');
             $table->string('locale')->index();
             $table->unique(['service_id', 'locale']);
         });

@@ -10,6 +10,46 @@
                         </a>
                     </li>
                 @endcan
+                @can('service index')
+                <li>
+                    <a href="{{ route('backend.service.index') }}" class="waves-effect">
+                        <i class="ri-customer-service-line"></i>
+                        <span>@lang('menus.services')</span>
+                    </a>
+                </li>
+                @endcan
+                @can('why-choose-us index')
+                    <li>
+                        <a href="{{ route('backend.why-choose-us.index') }}" class="waves-effect">
+                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                            <span>@lang('menus.why-choose-us')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('package-name index')
+                    <li>
+                        <a href="{{ route('backend.package-name.index') }}" class="waves-effect">
+                            <i class="ri-wallet-2-line"></i>
+                            <span>@lang('menus.package-name')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('package-content index')
+                    <li>
+                        <a href="{{ route('backend.package-content.index') }}" class="waves-effect">
+                            <i class="ri-wallet-2-line"></i>
+                            <span>@lang('menus.package-content')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('packages index')
+                    <li>
+                        <a href="{{ route('backend.packages.index') }}" class="waves-effect">
+                            <i class="ri-wallet-2-line"></i>
+                            <span>@lang('menus.packages')</span>
+                        </a>
+                    </li>
+                @endcan
                 <li class="menu-title">@lang('backend.site-setting')</li>
                 @can('languages index')
                     <li>

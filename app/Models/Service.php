@@ -9,11 +9,11 @@ use Astrotomic\Translatable\Translatable;
 
 class Service extends Model implements TranslatableContract
 {
-    use HasFactory, Translatable;
+    use HasFactory,Translatable;
     
     public $translatedAttributes = [
-        'main_title',
         'title',
         'content',
+        'alt',
     ];
 }

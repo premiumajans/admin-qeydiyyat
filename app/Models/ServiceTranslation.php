@@ -12,8 +12,8 @@ class ServiceTranslation extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'main_title',
         'title',
         'content',
+        'alt',
     ];
 }
