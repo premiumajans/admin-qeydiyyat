@@ -29,7 +29,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>@lang('backend.title'):</th>
+                                <th>@lang('backend.package-name'):</th>
+                                <th>@lang('backend.price'):</th>
                                 <th>@lang('backend.alt'):</th>
                                 <th>@lang('backend.time'):</th>
                                 <th>@lang('backend.actions'):</th>
@@ -39,16 +40,21 @@
                             @foreach($packages as $i=>$package)
                             <tr>
                                 <td class="text-center">{{ $i+=1 }}</td>
-                                <td class="text-center">s{{-- {{ $package->translate('az')->title }} --}}</td>
-                                <td class="text-center">s{{-- {{ $package->translate('az')->title }} --}}</td>
+                                <td class="text-center">{{ $package->translate('az')->title }}</td>
+                                <td class="text-center">{{ $package->translate('az')->price." ".$package->translate('az')->exchange }}</td>
+                                <td class="text-center">{{ $package->translate('az')->title }}</td>
                                 <td>{{ date('d.m.Y H:i:s',strtotime($package->created_at))}}</td>
                                 <td class="text-center">
                                     <a class="btn btn-primary"
-                                        href={{ route('backend.packages.edit',$package->package_name_id) }}>
-                                        <i class="fas fa-edit"></i>
+                                        href={{ route('backend.packages.packageChoose',$package->id) }}>
+                                        <i class="fas fa-plus"></i> 
+                                    </a>
+                                    <a class="btn btn-primary"
+                                        href={{ route('backend.packages.edit',$package->id) }}>
+                                        <i class="fas fa-edit"></i> 
                                     </a>
                                     <a class="btn btn-danger"
-                                        href="{{ route('backend.packages.destroy',$package->package_name_id) }}">
+                                        href="{{ route('backend.packages.destroy',$package->id) }}">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>

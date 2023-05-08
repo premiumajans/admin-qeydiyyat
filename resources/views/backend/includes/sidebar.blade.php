@@ -26,27 +26,19 @@
                         </a>
                     </li>
                 @endcan
-                @can('package-name index')
-                    <li>
-                        <a href="{{ route('backend.package-name.index') }}" class="waves-effect">
-                            <i class="ri-wallet-2-line"></i>
-                            <span>@lang('menus.package-name')</span>
-                        </a>
-                    </li>
-                @endcan
-                @can('package-content index')
-                    <li>
-                        <a href="{{ route('backend.package-content.index') }}" class="waves-effect">
-                            <i class="ri-wallet-2-line"></i>
-                            <span>@lang('menus.package-content')</span>
-                        </a>
-                    </li>
-                @endcan
                 @can('packages index')
                     <li>
                         <a href="{{ route('backend.packages.index') }}" class="waves-effect">
                             <i class="ri-wallet-2-line"></i>
                             <span>@lang('menus.packages')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('package-components index')
+                    <li>
+                        <a href="{{ route('backend.package-components.index') }}" class="waves-effect">
+                            <i class="ri-wallet-2-line"></i>
+                            <span>@lang('menus.package-components')</span>
                         </a>
                     </li>
                 @endcan

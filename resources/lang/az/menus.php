@@ -6,6 +6,7 @@ return array (
   'brands-represent' => 'Təmsil etdiyimiz markalar',
   'contact' => 'Əlaqə',
   'package-category' => 'Paket kateqoriya',
+  'package-components' => 'Paketin tərkibi',
   'package-content' => 'Paketin tərkibi',
   'package-name' => 'Paketin adı',
   'packages' => 'Paketlər',

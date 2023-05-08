@@ -6,6 +6,7 @@ return array (
   'brands-represent' => 'Brands we represent',
   'contact' => 'Contact',
   'package-category' => 'Package Category',
+  'package-components' => 'Package component',
   'package-content' => 'Package content',
   'package-name' => 'Package name',
   'packages' => 'Packages',

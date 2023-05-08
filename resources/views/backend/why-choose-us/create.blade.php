@@ -17,7 +17,6 @@
                                             <h4 class="mb-sm-0">@lang('menus.why-choose-us')</h4>
                                         </div>
                                     </div>
-                                   
                                     <ul class="nav nav-pills nav-justified" role="tablist">
                                         @foreach(active_langs() as $lan)
                                             <li class="nav-item waves-effect waves-light">
@@ -91,7 +90,6 @@
                                                 </div>
                                             </div>
                                         @endforeach
-                                        
                                     </div>
                                 </div>
                                 <div class="mb-5 text-center">

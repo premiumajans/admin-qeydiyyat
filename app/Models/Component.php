@@ -14,8 +14,8 @@ class Component extends Model implements TranslatableContract
 
     protected $guarded = [];
 
-    public function packages()
+    public function package()
     {
-        $this->belongsToMany(Package::class,'package_components');
+        return $this->belongsToMany(Package::class, 'package_components', 'component_id', 'package_id');
     }
 }

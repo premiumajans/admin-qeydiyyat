@@ -13,9 +13,12 @@ return new class extends Migration
             $table->foreignId('package_id')
                 ->constrained('packages')
                 ->onDelete('cascade');
-            $table->string('price');
             $table->string('title');
+            $table->string('price');
+            $table->string('exchange');
             $table->string('alt');
+            $table->string('locale')->index();
+            $table->unique(['package_id', 'locale']);
         });
     }
     public function down()

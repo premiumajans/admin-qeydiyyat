@@ -1,5 +1,5 @@
 @extends('master.backend')
-@section('title',__('menus.package-content'))
+@section('title',__('menus.package-components'))
 @section('styles')
 <link href="{{ asset('backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
     type="text/css" />
@@ -18,8 +18,8 @@
                 <div class="card-body">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">@lang('menus.package-content'):</h4>
-                            <a href="{{ route('backend.package-content.create') }}" class="btn btn-primary mb-3"><i
+                            <h4 class="mb-sm-0">@lang('menus.package-components'):</h4>
+                            <a href="{{ route('backend.package-components.create') }}" class="btn btn-primary mb-3"><i
                                     class="fas fa-plus"></i> &nbsp;@lang('backend.add-new')
                             </a>
                         </div>
@@ -29,26 +29,24 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>@lang('backend.title'):</th>
-                                <th>@lang('backend.alt'):</th>
+                                <th>@lang('backend.package-components'):</th>
                                 <th>@lang('backend.time'):</th>
                                 <th>@lang('backend.actions'):</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($packageContents as $i=>$packageContent)
+                            @foreach($packageComponents as $i=>$packageComponent)
                             <tr>
                                 <td class="text-center">{{ $i+=1 }}</td>
-                                <td class="text-center">{{ $packageContent->translate('az')->title }}</td>
-                                <td class="text-center">{{ $packageContent->alt }}</td>
-                                <td>{{ date('d.m.Y H:i:s',strtotime($packageContent->created_at))}}</td>
+                                <td class="text-center">{{ $packageComponent->translate('az')->title }}</td>
+                                <td>{{ date('d.m.Y H:i:s',strtotime($packageComponent->created_at))}}</td>
                                 <td class="text-center">
                                     <a class="btn btn-primary"
-                                        href={{ route('backend.package-content.edit',$packageContent->id) }}>
+                                        href={{ route('backend.package-components.edit',$packageComponent->id) }}>
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a class="btn btn-danger"
-                                        href="{{ route('backend.package-content.destroy',$packageContent->id) }}">
+                                        href="{{ route('backend.package-components.destroy',$packageComponent->id) }}">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>

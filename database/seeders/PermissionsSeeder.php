@@ -43,18 +43,14 @@ class PermissionsSeeder extends Seeder
             'why-choose-us create',
             'why-choose-us edit',
             'why-choose-us delete',
-            'package-name index',
-            'package-name create',
-            'package-name edit',
-            'package-name delete',
-            'package-content index',
-            'package-content create',
-            'package-content edit',
-            'package-content delete',
             'packages index',
             'packages create',
             'packages edit',
             'packages delete',
+            'package-components index',
+            'package-components create',
+            'package-components edit',
+            'package-components delete',
         ];
         foreach ($permissions as $permission) {
             Permission::create([

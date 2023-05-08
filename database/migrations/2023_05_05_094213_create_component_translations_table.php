@@ -15,6 +15,8 @@ return new class extends Migration
                 ->constrained('components')
                 ->onDelete('cascade');
             $table->text('title');
+            $table->string('locale')->index();
+            $table->unique(['component_id', 'locale']);
         });
     }
 

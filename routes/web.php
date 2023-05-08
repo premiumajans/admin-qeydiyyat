@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'auth:sanctum', 'backendLanguage'], function () {
-
     //General
     Route::get('/menu-status/change/{name}', [BStatus::class, 'change'])->name('menuStatus');
     Route::get('/change-language/{lang}', [LChangeLan::class, 'switchLang'])->name('switchLang');
@@ -30,6 +29,8 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'auth:san
     Route::post('/give-permission-to-user-update', [BPermission::class, 'giveUserPermissionUpdate'])->name('givePermissionUserUpdate');
     //Statuses
     Route::get('/site-language/{id}/change-status', [BSiteLan::class, 'siteLanStatus'])->name('siteLanStatus');
+    Route::get('/packages/{id}/package-choose', [PackageController::class, 'packageChoose'])->name('packages.packageChoose');
+    Route::post('/packages/{id}/package-store', [PackageController::class, 'packageStore'])->name('packages.packageStore');
     //Delete
     Route::get('/site-languages/{id}/delete', [BSiteLan::class, 'delSiteLang'])->name('delSiteLang');
     Route::get('/settings/{id}/delete', [BSetting::class, 'delSetting'])->name('delSetting');
@@ -37,22 +38,22 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'auth:san
     Route::get('/report/{id}/delete', [BReport::class, 'delReport'])->name('delReport');
     Route::get('/report/clean-all', [BReport::class, 'cleanAllReport'])->name('cleanAllReport');
     Route::get('/permission/{id}/delete', [BPermission::class, 'delPermission'])->name('delPermission');
+    Route::get('/service/{id}/delete', [ServiceController::class, 'destroy'])->name('service.destroy');
+    Route::get('/why-choose-us/{id}/delete', [WhyChooseUsController::class, 'destroy'])->name('why-choose-us.destroy');
+    Route::get('/packages/{id}/delete', [PackageController::class, 'destroy'])->name('packages.destroy');
+    Route::get('/package-components/{id}/delete', [PackageComponentController::class, 'destroy'])->name('package-components.destroy');
 
     Route::resource('/site-languages', BSiteLan::class);
     Route::resource('/settings', BSetting::class);
     Route::resource('/users', BAdmin::class);
     Route::resource('/my-informations', BInformation::class);
     Route::resource('/permissions', BPermission::class);
-    Route::resource('/service', ServiceController::class)->except(['create','store','show']);
-    Route::resource('/why-choose-us', WhyChooseUsController::class)->except('show');
-    Route::resource('/packages', PackageController::class)->except('show');
-    Route::resource('/package-components', PackageComponentController::class)->except('show');
+    Route::resource('/service', ServiceController::class)->except(['destroy','show']);
+    Route::resource('/why-choose-us', WhyChooseUsController::class)->except(['destroy','show']);
+    Route::resource('/packages', PackageController::class)->except(['destroy','show']);
+    Route::resource('/package-components', PackageComponentController::class)->except(['destroy','show']);
 
-    //Delete
-    Route::get('/service/{id}', [ServiceController::class, 'destroy'])->name('service.destroy');
-    Route::get('/why-choose-us/{id}', [WhyChooseUsController::class, 'destroy'])->name('why-choose-us.destroy');
-    Route::get('/packages/{id}', [PackageController::class, 'destroy'])->name('packages.destroy');
-    Route::get('/package-components/{id}', [PackageComponentController::class, 'destroy'])->name('package-components.destroy');
+    
 
     Route::get('/clear', function () {
         Artisan::call('cache:clear');

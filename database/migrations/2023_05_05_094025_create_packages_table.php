@@ -9,7 +9,7 @@ return new class extends Migration {
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->boolean('status')->default(0);
+            $table->boolean('status')->default(1);
             $table->boolean('most_popular')->default(0);
             $table->timestamps();
         });
