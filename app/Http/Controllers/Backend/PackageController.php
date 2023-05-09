@@ -32,6 +32,7 @@ class PackageController extends Controller
         abort_if(Gate::denies('packages create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         try {
             $package = new Package();
+            $package->most_popular = $request->has('most_popular') ? 1 : 0;
             $package->save();
             foreach (active_langs() as $active_lang) {
                 $translation = new PackageTranslation();
@@ -42,6 +43,7 @@ class PackageController extends Controller
                 $translation->locale = $active_lang->code;
                 $translation->package_id = $package->id;
                 $translation->save();
+                
             }
             alert()->success(__('messages.success'));
             return redirect(route('backend.packages.index'));
@@ -62,6 +64,7 @@ class PackageController extends Controller
     {
         abort_if(Gate::denies('packages edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $package = Package::findOrFail($id);
+        $package->most_popular = $request->has('most_popular') ? 1 : 0;
         try {
             DB::transaction(function () use ($request, $package) {
                 foreach (active_langs() as $lang) {

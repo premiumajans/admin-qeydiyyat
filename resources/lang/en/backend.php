@@ -87,6 +87,7 @@ return array (
   'message' => 'Message',
   'meta' => 'Meta',
   'middle' => 'Middle',
+  'month' => 'Monthly',
   'most-view' => 'Most watched',
   'name' => 'Name',
   'new' => 'New',
@@ -115,6 +116,7 @@ return array (
   'phone' => 'Phone',
   'photo' => 'Photo',
   'photos' => 'Photos',
+  'popularPackage' => 'Most popular package',
   'position' => 'Position',
   'post' => 'Post',
   'posts' => 'Posts',
@@ -161,4 +163,5 @@ return array (
   'views' => 'Просмотры',
   'write-contact-us' => 'If you would like to see your name on this list, write to the "<a href="/contact-us">Contact Us</a>" page.',
   'writers' => 'Writers',
+  'year' => 'Yearly',
 );

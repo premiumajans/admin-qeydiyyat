@@ -87,6 +87,7 @@ return array (
   'message' => 'Mesaj',
   'meta' => 'Meta',
   'middle' => 'Orta',
+  'month' => 'Aylıq',
   'most-view' => 'Ən çox izlənilənlər',
   'name' => 'Ad',
   'new' => 'Yeni',
@@ -115,6 +116,7 @@ return array (
   'phone' => 'Telefon',
   'photo' => 'Şəkil',
   'photos' => 'Şəkillər',
+  'popularPackage' => 'Məhşur paket',
   'position' => 'Vəzifə',
   'post' => 'Post',
   'posts' => 'Postlar',
@@ -162,4 +164,5 @@ return array (
   'vacancy' => 'Vakansiya',
   'views' => 'Izlənmə',
   'writers' => 'Yazıçılar',
+  'year' => 'İllik',
 );

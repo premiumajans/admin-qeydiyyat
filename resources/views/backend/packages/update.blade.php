@@ -66,9 +66,9 @@
                                                         <label>@lang('backend.exchange') <span class="text-danger">*</span></label>
                                                         <select name="exchange[{{ $lan->code }}]" class="form-control">
                                                             <option value="">@lang('backend.exchange-choose')</option>
-                                                            <option value="AZN" {{ ($package->exchange == 'AZN') ? 'selected' : '' }}>AZN</option>
-                                                            <option value="USD" {{ ($package->exchange == 'USD') ? 'selected' : '' }}>USD</option>
-                                                            <option value="RUBL" {{ ($package->exchange == 'RUBL') ? 'selected' : '' }}>RUBL</option>
+                                                            <option value="AZN" {{ ($package->translate($lan->code)->exchange == 'AZN') ? 'selected' : '' }}>AZN</option>
+                                                            <option value="USD" {{ ($package->translate($lan->code)->exchange == 'USD') ? 'selected' : '' }}>USD</option>
+                                                            <option value="RUBL" {{ ($package->translate($lan->code)->exchange == 'RUBL') ? 'selected' : '' }}>RUBL</option>
                                                         </select>
                                                     </div>
                                                     <div class="mb-3">
@@ -89,6 +89,12 @@
                                                 </div>
                                             </div>
                                         @endforeach
+                                        <div class="form-check">
+                                            <input name="most_popular" type="checkbox" {{ $package->most_popular == 1 ? 'checked' : ''}}
+                                                class="form-check-input">
+                                            <label class="form-check-label"
+                                                for="flexCheckDefault">@lang('backend.popularPackage')</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mb-5 text-center">
