@@ -14,7 +14,8 @@ return new class extends Migration
                 ->constrained('packages')
                 ->onDelete('cascade');
             $table->string('title');
-            $table->string('price');
+            $table->string('monthlyPrice');
+            $table->string('annualyPrice');
             $table->string('exchange');
             $table->string('alt');
             $table->string('locale')->index();

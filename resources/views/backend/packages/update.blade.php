@@ -49,17 +49,29 @@
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label>@lang('backend.price') <span class="text-danger">*</span></label>
-                                                        <input name="price[{{ $lan->code }}]" type="text"
-                                                                value="{{ $package->translate($lan->code)->price }}"
-                                                                class="form-control" required=""
-                                                                data-parsley-minlength="6"
-                                                                placeholder="@lang('backend.price')">
+                                                        <label>@lang('backend.monthlyPrice') <span class="text-danger">*</span></label>
+                                                        <input name="monthlyPrice[{{ $lan->code }}]" type="text"
+                                                            value="{{ $package->translate($lan->code)->monthlyPrice }}"
+                                                            class="form-control" required="" data-parsley-minlength="6"
+                                                            placeholder="@lang('backend.monthlyPrice')">
                                                         <div class="valid-feedback">
-                                                            @lang('backend.price') @lang('messages.is-correct')
+                                                            @lang('backend.monthlyPrice') @lang('messages.is-correct')
                                                         </div>
                                                         <div class="invalid-feedback">
-                                                            @lang('backend.price') @lang('messages.not-correct')
+                                                            @lang('backend.monthlyPrice') @lang('messages.not-correct')
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.annualyPrice') <span class="text-danger">*</span></label>
+                                                        <input name="annualyPrice[{{ $lan->code }}]" type="text"
+                                                            value="{{ $package->translate($lan->code)->annualyPrice }}"
+                                                            class="form-control" required="" data-parsley-minlength="6"
+                                                            placeholder="@lang('backend.annualyPrice')">
+                                                        <div class="valid-feedback">
+                                                            @lang('backend.annualyPrice') @lang('messages.is-correct')
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            @lang('backend.annualyPrice') @lang('messages.not-correct')
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">

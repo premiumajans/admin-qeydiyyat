@@ -12,7 +12,8 @@ class Package extends Model implements TranslatableContract
 
     public $translatedAttributes = [
         'title', 
-        'price', 
+        'monthlyPrice', 
+        'annualyPrice', 
         'exchange', 
         'alt',
     ];

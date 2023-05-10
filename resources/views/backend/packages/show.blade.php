@@ -22,23 +22,17 @@
                                 @csrf
                                 <input type="hidden" name="package_id" value="{{ $package->id }}">
                                 <div class="card-body text-center">
-                                    <div class="col-12">
-                                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mb-sm-0">@lang('menus.packages')</h4>
-                                        </div>
-                                    </div>
                                     <h3 class="role-title">@lang('backend.packageComponentChoose')</h3>
                                     <input type="checkbox" name="checkAll" id="checkAll" class="form-check-input" />
                                     <label class="form-check-label" for="checkAll">
                                         @lang('backend.selectAll')
                                     </label>
                                     @foreach ($components as $component)
-                                        <div class="form-check">
-                                            <input name="component_id[]" type="checkbox" value="{{ $component->id }}"
-                                                class="form-check-input"
-                                                {{ $package->component->contains($component->id) ? 'checked' : '' }}>
-                                            <label class="form-check-label"
-                                                for="flexCheckDefault">{{ $component->title }}</label>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" name="component_id[]" value="{{ $component->id }}" 
+                                                {{ $package->component->contains($component->id) ? 'checked' : '' }}
+                                                class="form-check-input" id="flexSwitchCheckDefault">
+                                            <label class="form-check-label" for="flexSwitchCheckDefault">{{ $component->title }}</label>
                                         </div>
                                     @endforeach
                                 </div>

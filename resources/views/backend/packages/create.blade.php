@@ -28,22 +28,6 @@
                                             </li>
                                         @endforeach
                                     </ul>
-                                    <ul class="nav nav-pills d-flex justify-content-center mt-3" role="tablist">
-                                        <li class="nav-item waves-effect waves-light ">
-                                            <a class="nav-link"
-                                                data-bs-toggle="tab" href="#as"
-                                                role="tab" aria-selected="true">
-                                                <span class="d-none d-sm-block">@lang('backend.month')</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item waves-effect waves-light">
-                                            <a class="nav-link"
-                                                data-bs-toggle="tab" href="#as"
-                                                role="tab" aria-selected="true">
-                                                <span class="d-none d-sm-block">@lang('backend.year')</span>
-                                            </a>
-                                        </li>
-                                    </ul>
                                     <div class="tab-content p-3 text-muted">
                                         @foreach (active_langs() as $lan)
                                             <div class="tab-pane as @if ($loop->first) active show @endif"
@@ -61,16 +45,28 @@
                                                             @lang('backend.package-name') @lang('messages.not-correct')
                                                         </div>
                                                     </div>
-                                                    <div class="mb-3" id="as">
-                                                        <label>@lang('backend.price') <span class="text-danger">*</span></label>
-                                                        <input name="price[{{ $lan->code }}]" type="text"
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.monthlyPrice') <span class="text-danger">*</span></label>
+                                                        <input name="monthlyPrice[{{ $lan->code }}]" type="text"
                                                             class="form-control" required="" data-parsley-minlength="6"
-                                                            placeholder="@lang('backend.price')">
+                                                            placeholder="@lang('backend.monthlyPrice')">
                                                         <div class="valid-feedback">
-                                                            @lang('backend.price') @lang('messages.is-correct')
+                                                            @lang('backend.monthlyPrice') @lang('messages.is-correct')
                                                         </div>
                                                         <div class="invalid-feedback">
-                                                            @lang('backend.price') @lang('messages.not-correct')
+                                                            @lang('backend.monthlyPrice') @lang('messages.not-correct')
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.annualyPrice') <span class="text-danger">*</span></label>
+                                                        <input name="annualyPrice[{{ $lan->code }}]" type="text"
+                                                            class="form-control" required="" data-parsley-minlength="6"
+                                                            placeholder="@lang('backend.annualyPrice')">
+                                                        <div class="valid-feedback">
+                                                            @lang('backend.annualyPrice') @lang('messages.is-correct')
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            @lang('backend.annualyPrice') @lang('messages.not-correct')
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">

@@ -37,7 +37,8 @@ class PackageController extends Controller
             foreach (active_langs() as $active_lang) {
                 $translation = new PackageTranslation();
                 $translation->title = $request->title[$active_lang->code];
-                $translation->price = $request->price[$active_lang->code];
+                $translation->monthlyPrice = $request->monthlyPrice[$active_lang->code];
+                $translation->annualyPrice = $request->annualyPrice[$active_lang->code];
                 $translation->exchange = $request->exchange[$active_lang->code];
                 $translation->alt = $request->alt[$active_lang->code];
                 $translation->locale = $active_lang->code;
@@ -69,7 +70,8 @@ class PackageController extends Controller
             DB::transaction(function () use ($request, $package) {
                 foreach (active_langs() as $lang) {
                     $package->translate($lang->code)->title = $request->title[$lang->code];
-                    $package->translate($lang->code)->price = $request->price[$lang->code];
+                    $package->translate($lang->code)->monthlyPrice = $request->monthlyPrice[$lang->code];
+                    $package->translate($lang->code)->annualyPrice = $request->annualyPrice[$lang->code];
                     $package->translate($lang->code)->exchange = $request->exchange[$lang->code];
                     $package->translate($lang->code)->alt = $request->alt[$lang->code];
                 }

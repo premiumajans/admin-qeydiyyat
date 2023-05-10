@@ -30,7 +30,8 @@
                             <tr>
                                 <th>#</th>
                                 <th>@lang('backend.package-name'):</th>
-                                <th>@lang('backend.price'):</th>
+                                <th>@lang('backend.monthlyPrice'):</th>
+                                <th>@lang('backend.annualyPrice'):</th>
                                 <th>@lang('backend.alt'):</th>
                                 <th>@lang('backend.time'):</th>
                                 <th>@lang('backend.actions'):</th>
@@ -41,7 +42,8 @@
                             <tr>
                                 <td class="text-center">{{ $i+=1 }}</td>
                                 <td class="text-center">{{ $package->translate('az')->title }}</td>
-                                <td class="text-center">{{ $package->translate('az')->price." ".$package->translate('az')->exchange }}</td>
+                                <td class="text-center">{{ $package->translate('az')->monthlyPrice." ".$package->translate('az')->exchange }}</td>
+                                <td class="text-center">{{ $package->translate('az')->annualyPrice." ".$package->translate('az')->exchange }}</td>
                                 <td class="text-center">{{ $package->translate('az')->title }}</td>
                                 <td>{{ date('d.m.Y H:i:s',strtotime($package->created_at))}}</td>
                                 <td class="text-center">

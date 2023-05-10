@@ -1,11 +1,13 @@
 <?php
 
 return array (
+  'annualyPrice' => 'Годовая цена',
   'count' => 'Число',
   'error' => 'Что-то пошло не так',
   'exchange' => 'Обмен',
   'exchange-choose' => 'Обмен выбрать',
   'month' => 'Ежемесячно',
+  'monthlyPrice' => 'Ежемесячная цена',
   'package-components' => 'Компоненты пакета',
   'package-content' => 'Содержание пакета',
   'package-name' => 'Имя пакета',
