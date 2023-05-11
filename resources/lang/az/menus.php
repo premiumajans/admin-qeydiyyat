@@ -13,6 +13,7 @@ return array (
   'pricing' => 'Paketlər',
   'products' => 'Məhsullar',
   'services' => 'Xidmətlər',
+  'slider' => 'Slayder',
   'technical-support' => 'Texniki dəstək',
   'why-choose-us' => 'Niyə bizi seçirsiz',
 );

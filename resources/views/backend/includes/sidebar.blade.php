@@ -10,6 +10,14 @@
                         </a>
                     </li>
                 @endcan
+                @can('slider index')
+                    <li>
+                        <a href="{{ route('backend.slider.index') }}" class="waves-effect">
+                            <i class="ri-equalizer-line"></i>
+                            <span>@lang('menus.slider')</span>
+                        </a>
+                    </li>
+                @endcan
                 @can('service index')
                 <li>
                     <a href="{{ route('backend.service.index') }}" class="waves-effect">

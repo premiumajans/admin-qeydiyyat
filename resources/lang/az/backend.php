@@ -74,6 +74,7 @@ return array (
   'history' => 'Tarixçə',
   'home-page' => 'Ana Səhifə',
   'icon' => 'İkon',
+  'image' => 'Şəkil',
   'informations' => 'Məlumatlarım',
   'keywords' => 'Açar sözlər',
   'languages' => 'Dillər',

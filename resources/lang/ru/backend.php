@@ -6,6 +6,7 @@ return array (
   'error' => 'Что-то пошло не так',
   'exchange' => 'Обмен',
   'exchange-choose' => 'Обмен выбрать',
+  'image' => 'Изображение',
   'month' => 'Ежемесячно',
   'monthlyPrice' => 'Ежемесячная цена',
   'package-components' => 'Компоненты пакета',

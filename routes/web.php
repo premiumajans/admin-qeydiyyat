@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\PermissionController as BPermission;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\StatusController as BStatus;
 use App\Http\Controllers\Backend\WhyChooseUsController;
+use App\Http\Controllers\Backend\SliderController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,7 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'auth:san
     Route::get('/why-choose-us/{id}/delete', [WhyChooseUsController::class, 'destroy'])->name('why-choose-us.destroy');
     Route::get('/packages/{id}/delete', [PackageController::class, 'destroy'])->name('packages.destroy');
     Route::get('/package-components/{id}/delete', [PackageComponentController::class, 'destroy'])->name('package-components.destroy');
+    Route::get('/slider/{id}/delete', [SliderController::class, 'destroy'])->name('slider.destroy');
 
     Route::resource('/site-languages', BSiteLan::class);
     Route::resource('/settings', BSetting::class);
@@ -52,6 +54,7 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'auth:san
     Route::resource('/why-choose-us', WhyChooseUsController::class)->except(['destroy','show']);
     Route::resource('/packages', PackageController::class)->except(['destroy','show']);
     Route::resource('/package-components', PackageComponentController::class)->except(['destroy','show']);
+    Route::resource('/slider', SliderController::class)->except(['destroy','show']);
 
     
 

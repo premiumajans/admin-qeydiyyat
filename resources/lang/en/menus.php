@@ -13,6 +13,7 @@ return array (
   'pricing' => 'Packages',
   'products' => 'Products',
   'services' => 'Services',
+  'slider' => 'Slider',
   'technical-support' => 'Technical Support',
   'why-choose-us' => 'Why choose us',
 );

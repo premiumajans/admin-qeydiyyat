@@ -74,6 +74,7 @@ return array (
   'history' => 'History',
   'home-page' => 'Home',
   'icon' => 'Icon',
+  'image' => 'İmage',
   'informations' => 'İnformations',
   'keywords' => 'Keywords',
   'languages' => 'Languages',

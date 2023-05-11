@@ -7,5 +7,6 @@ return array (
   'package-name' => 'Имя пакета',
   'packages' => 'Пакеты',
   'pricing' => 'Пакеты',
+  'slider' => 'Слайдер',
   'why-choose-us' => 'Почему вы выбираете нас',
 );

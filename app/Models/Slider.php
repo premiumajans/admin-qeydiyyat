@@ -6,13 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 
-class WhyChooseUs extends Model implements TranslatableContract
-{
+class Slider extends Model implements TranslatableContract
+{ 
     use Translatable;
 
-    protected $fillable = [
-        'icon',
-    ];
+    protected $guarded = [];
 
     public $translatedAttributes = [
         'title',
