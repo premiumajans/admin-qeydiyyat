@@ -6,7 +6,9 @@ return array (
   'package-content' => 'Содержание пакета',
   'package-name' => 'Имя пакета',
   'packages' => 'Пакеты',
+  'partner' => 'Партнер',
   'pricing' => 'Пакеты',
   'slider' => 'Слайдер',
+  'team' => 'Команда',
   'why-choose-us' => 'Почему вы выбираете нас',
 );

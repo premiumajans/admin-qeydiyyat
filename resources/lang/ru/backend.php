@@ -7,6 +7,7 @@ return array (
   'exchange' => 'Обмен',
   'exchange-choose' => 'Обмен выбрать',
   'image' => 'Изображение',
+  'lastname' => 'Фамилия',
   'month' => 'Ежемесячно',
   'monthlyPrice' => 'Ежемесячная цена',
   'package-components' => 'Компоненты пакета',

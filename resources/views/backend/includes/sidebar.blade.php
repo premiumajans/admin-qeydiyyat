@@ -50,6 +50,30 @@
                         </a>
                     </li>
                 @endcan
+                @can('team index')
+                    <li>
+                        <a href="{{ route('backend.team.index') }}" class="waves-effect">
+                            <i class="ri-group-line"></i>
+                            <span>@lang('menus.team')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('partner index')
+                    <li>
+                        <a href="{{ route('backend.partner.index') }}" class="waves-effect">
+                            <i class="fa fa-users"></i>
+                            <span>@lang('menus.partner')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('faq index')
+                    <li>
+                        <a href="{{ route('backend.faq.index') }}" class="waves-effect">
+                            <i class="fa fa-info-circle"></i>
+                            <span>@lang('menus.faq')</span>
+                        </a>
+                    </li>
+                @endcan
                 <li class="menu-title">@lang('backend.site-setting')</li>
                 @can('languages index')
                     <li>

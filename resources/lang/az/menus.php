@@ -10,10 +10,12 @@ return array (
   'package-content' => 'Paketin tərkibi',
   'package-name' => 'Paketin adı',
   'packages' => 'Paketlər',
+  'partner' => 'Əməkdaş',
   'pricing' => 'Paketlər',
   'products' => 'Məhsullar',
   'services' => 'Xidmətlər',
   'slider' => 'Slayder',
+  'team' => 'Komanda',
   'technical-support' => 'Texniki dəstək',
   'why-choose-us' => 'Niyə bizi seçirsiz',
 );

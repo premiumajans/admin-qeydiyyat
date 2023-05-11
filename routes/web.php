@@ -1,6 +1,7 @@
 <?php
 
 //Backend Controllers
+
 use App\Http\Controllers\Backend\HomeController as BHome;
 use App\Http\Controllers\Backend\LanguageController as LChangeLan;
 use App\Http\Controllers\Backend\SettingController as BSetting;
@@ -15,10 +16,13 @@ use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\StatusController as BStatus;
 use App\Http\Controllers\Backend\WhyChooseUsController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\PartnerController;
+use App\Http\Controllers\Backend\FaqController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'auth:sanctum', 'backendLanguage'], function () {
+Route::group(['as' => 'backend.', 'middleware' => 'auth:sanctum', 'backendLanguage'], function () {
     //General
     Route::get('/menu-status/change/{name}', [BStatus::class, 'change'])->name('menuStatus');
     Route::get('/change-language/{lang}', [LChangeLan::class, 'switchLang'])->name('switchLang');
@@ -44,6 +48,9 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'auth:san
     Route::get('/packages/{id}/delete', [PackageController::class, 'destroy'])->name('packages.destroy');
     Route::get('/package-components/{id}/delete', [PackageComponentController::class, 'destroy'])->name('package-components.destroy');
     Route::get('/slider/{id}/delete', [SliderController::class, 'destroy'])->name('slider.destroy');
+    Route::get('/team/{id}/delete', [TeamController::class, 'destroy'])->name('team.destroy');
+    Route::get('/partner/{id}/delete', [PartnerController::class, 'destroy'])->name('partner.destroy');
+    Route::get('/faq/{id}/delete', [FaqController::class, 'destroy'])->name('faq.destroy');
 
     Route::resource('/site-languages', BSiteLan::class);
     Route::resource('/settings', BSetting::class);
@@ -55,6 +62,9 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'auth:san
     Route::resource('/packages', PackageController::class)->except(['destroy','show']);
     Route::resource('/package-components', PackageComponentController::class)->except(['destroy','show']);
     Route::resource('/slider', SliderController::class)->except(['destroy','show']);
+    Route::resource('/team', TeamController::class)->except(['destroy','show']);
+    Route::resource('/partner', PartnerController::class)->except(['destroy','show']);
+    Route::resource('/faq', FaqController::class)->except(['destroy','show']);
 
     
 
