@@ -23,6 +23,7 @@ return array (
   'att-name' => 'Atribut adı',
   'back-to-home' => 'Ana səhifəyə qayıt',
   'back_photo' => 'Arxa şəkil',
+  'blog' => 'Blog',
   'blogs' => 'Bloglar',
   'brends' => 'Brendlər',
   'cancel' => 'Ləğv et',

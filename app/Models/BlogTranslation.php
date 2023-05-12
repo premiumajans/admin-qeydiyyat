@@ -4,9 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SliderTranslation extends Model
+class BlogTranslation extends Model
 {
     public $timestamps = false;
 
     protected $guarded = [];
+    
 }

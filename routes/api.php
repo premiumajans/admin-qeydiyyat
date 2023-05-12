@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\BlogController;
+use App\Http\Controllers\Api\FaqController;
 use App\Http\Controllers\Api\PackageController;
 use App\Http\Controllers\Api\PartnerController;
 use App\Http\Controllers\Api\ServiceController;
@@ -19,6 +21,8 @@ Route::apiResource('/packages',PackageController::class)->only('index');
 Route::apiResource('/slider',SliderController::class)->only('index'); 
 Route::apiResource('/team',TeamController::class)->only('index'); 
 Route::apiResource('/partner',PartnerController::class)->only('index'); 
+Route::apiResource('/faq',FaqController::class)->only('index'); 
+Route::apiResource('/blog',BlogController::class)->only(['index','show']); 
 
 
 

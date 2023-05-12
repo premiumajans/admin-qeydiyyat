@@ -12,7 +12,7 @@ return [
 
     'scan_paths' => [app_path(), resource_path()],
 
-    'ui_url' => 'admin/dil',
+    'ui_url' => 'dil',
 
     'database' => [
 

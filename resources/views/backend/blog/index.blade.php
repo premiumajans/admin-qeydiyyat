@@ -1,5 +1,5 @@
 @extends('master.backend')
-@section('title',__('backend.faq'))
+@section('title',__('backend.blog'))
 @section('styles')
 <link href="{{ asset('backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
     type="text/css" />
@@ -18,8 +18,8 @@
                 <div class="card-body">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">@lang('backend.faq'):</h4>
-                            <a href="{{ route('backend.faq.create') }}" class="btn btn-primary mb-3"><i
+                            <h4 class="mb-sm-0">@lang('backend.blog'):</h4>
+                            <a href="{{ route('backend.blog.create') }}" class="btn btn-primary mb-3"><i
                                     class="fas fa-plus"></i> &nbsp;@lang('backend.add-new')
                             </a>
                         </div>
@@ -28,29 +28,34 @@
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>ID</th>
+                                <th>@lang('backend.image'):</th>
                                 <th>@lang('backend.title'):</th>
                                 <th>@lang('backend.content'):</th>
+                                <th>@lang('backend.slug'):</th>
                                 <th>@lang('backend.alt'):</th>
                                 <th>@lang('backend.time'):</th>
                                 <th>@lang('backend.actions'):</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($faqs as $i=>$faq)
+                            @foreach($blogs as $i=>$blog)
                             <tr>
                                 <td class="text-center">{{ $i+=1 }}</td>
-                                <td class="text-center">{{ $faq->translate('az')->title }}</td>
-                                <td class="text-center">{{ $faq->translate('az')->content }}</td>
-                                <td class="text-center">{{ $faq->alt }}</td>
-                                <td>{{ date('d.m.Y H:i:s',strtotime($faq->created_at))}}</td>
+                                <td class="text-center"><img src="{{ asset($blog->image) }}" width="100"
+                                    height="50"></td>
+                                <td class="text-center">{{ $blog->translate('az')->title }}</td>
+                                <td class="text-center">{{ $blog->translate('az')->content }}</td>
+                                <td class="text-center">{{ $blog->translate('az')->slug }}</td>
+                                <td class="text-center">{{ $blog->alt }}</td>
+                                <td>{{ date('d.m.Y H:i:s',strtotime($blog->created_at))}}</td>
                                 <td class="text-center">
                                     <a class="btn btn-primary"
-                                        href={{ route('backend.faq.edit',$faq->id) }}>
+                                        href={{ route('backend.blog.edit',$blog->id) }}>
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a class="btn btn-danger"
-                                        href="{{ route('backend.faq.destroy',$faq->id) }}">
+                                        href="{{ route('backend.blog.destroy',$blog->id) }}">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>

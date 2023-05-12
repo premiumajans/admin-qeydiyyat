@@ -70,7 +70,15 @@
                     <li>
                         <a href="{{ route('backend.faq.index') }}" class="waves-effect">
                             <i class="fa fa-info-circle"></i>
-                            <span>@lang('menus.faq')</span>
+                            <span>@lang('backend.faq')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('blog index')
+                    <li>
+                        <a href="{{ route('backend.blog.index') }}" class="waves-effect">
+                            <i class="ri-newspaper-line"></i>
+                            <span>@lang('backend.blog')</span>
                         </a>
                     </li>
                 @endcan

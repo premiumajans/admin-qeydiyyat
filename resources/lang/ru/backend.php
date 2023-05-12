@@ -2,10 +2,12 @@
 
 return array (
   'annualyPrice' => 'Годовая цена',
+  'blog' => 'Блог',
   'count' => 'Число',
   'error' => 'Что-то пошло не так',
   'exchange' => 'Обмен',
   'exchange-choose' => 'Обмен выбрать',
+  'faq' => 'Фаг',
   'image' => 'Изображение',
   'lastname' => 'Фамилия',
   'month' => 'Ежемесячно',

@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\PartnerController;
 use App\Http\Controllers\Backend\FaqController;
+use App\Http\Controllers\Backend\BlogController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,7 @@ Route::group(['as' => 'backend.', 'middleware' => 'auth:sanctum', 'backendLangua
     Route::get('/team/{id}/delete', [TeamController::class, 'destroy'])->name('team.destroy');
     Route::get('/partner/{id}/delete', [PartnerController::class, 'destroy'])->name('partner.destroy');
     Route::get('/faq/{id}/delete', [FaqController::class, 'destroy'])->name('faq.destroy');
+    Route::get('/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blog.destroy');
 
     Route::resource('/site-languages', BSiteLan::class);
     Route::resource('/settings', BSetting::class);
@@ -65,7 +67,8 @@ Route::group(['as' => 'backend.', 'middleware' => 'auth:sanctum', 'backendLangua
     Route::resource('/team', TeamController::class)->except(['destroy','show']);
     Route::resource('/partner', PartnerController::class)->except(['destroy','show']);
     Route::resource('/faq', FaqController::class)->except(['destroy','show']);
-
+    Route::resource('/blog', BlogController::class)->except(['destroy','show']);
+ 
     
 
     Route::get('/clear', function () {

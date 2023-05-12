@@ -1,5 +1,5 @@
 @extends('master.backend')
-@section('title',__('backend.faq'))
+@section('title',__('menus.blog'))
 @section('content')
     <div class="main-content">
         <div class="page-content">
@@ -7,7 +7,7 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-9">
                         <div class="card">
-                            <form action="{{ route('backend.faq.update',$faq->id) }}" class="needs-validation"
+                            <form action="{{ route('backend.blog.update',$blog->id) }}" class="needs-validation"
                                   novalidate
                                   method="post" enctype="multipart/form-data">
                                 @csrf
@@ -16,7 +16,13 @@
                                     <div class="col-12">
                                         <div
                                             class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mb-sm-0">@lang('backend.new') @lang('backend.faq')</h4>
+                                            <h4 class="mb-sm-0">@lang('backend.new') @lang('menus.blog')</h4>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label>@lang('backend.image'):</label>
+                                        <div>
+                                            <img width="100%" height="auto" src="{{ asset($blog->image) }}">
                                         </div>
                                     </div>
                                     <ul class="nav nav-pills nav-justified" role="tablist">
@@ -31,6 +37,11 @@
                                         @endforeach
                                     </ul>
                                     <div class="tab-content p-3 text-muted">
+                                        
+                                        <div class="mb-3">
+                                            <label>@lang('backend.image')</label>
+                                            <input type="file" name="image" class="form-control">
+                                        </div>
                                         @foreach(active_langs() as $lan)
                                             <div class="tab-pane @if($loop->first) active show @endif"
                                                  id="{{ $lan->code }}" role="tabpanel">
@@ -38,9 +49,10 @@
                                                     <div class="mb-3">
                                                         <label>@lang('backend.title') <span class="text-danger">*</span></label>
                                                         <input name="title[{{ $lan->code }}]" type="text"
-                                                               class="form-control" required=""
-                                                               data-parsley-minlength="6"
-                                                               value="{{ $faq->translate($lan->code)->title }}">
+                                                                value="{{ $blog->translate($lan->code)->title }}"
+                                                                class="form-control" required=""
+                                                                data-parsley-minlength="6"
+                                                                placeholder="@lang('backend.title')">
                                                         <div class="valid-feedback">
                                                             @lang('backend.title') @lang('messages.is-correct')
                                                         </div>
@@ -53,7 +65,7 @@
                                                                 class="text-danger">*</span></label>
                                                         <textarea name="content[{{ $lan->code }}]" type="text"
                                                                   class="form-control" required=""
-                                                                  rows="6">{{ $faq->translate($lan->code)->content }}</textarea>
+                                                                  rows="6">{{ $blog->translate($lan->code)->content }}</textarea>
                                                         <div class="valid-feedback">
                                                             @lang('backend.content') @lang('messages.is-correct')
                                                         </div>
@@ -62,12 +74,26 @@
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">
+                                                        <label>@lang('backend.slug')</label>
+                                                        <input name="slug[{{ $lan->code }}]" type="text"
+                                                                value="{{ $blog->translate($lan->code)->slug }}"
+                                                                class="form-control" 
+                                                                data-parsley-minlength="6"
+                                                                placeholder="@lang('backend.slug')">
+                                                        <div class="valid-feedback">
+                                                            @lang('backend.slug') @lang('messages.is-correct')
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            @lang('backend.slug') @lang('messages.not-correct')
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
                                                         <label>@lang('backend.alt')</label>
                                                         <input name="alt[{{ $lan->code }}]" type="text"
-                                                            value="{{ $faq->translate($lan->code)->alt }}"
-                                                               class="form-control"
-                                                               data-parsley-minlength="6"
-                                                               placeholder="@lang('backend.alt')">
+                                                                value="{{ $blog->translate($lan->code)->alt }}"
+                                                                class="form-control" 
+                                                                data-parsley-minlength="6"
+                                                                placeholder="@lang('backend.alt')">
                                                         <div class="valid-feedback">
                                                             @lang('backend.alt') @lang('messages.is-correct')
                                                         </div>

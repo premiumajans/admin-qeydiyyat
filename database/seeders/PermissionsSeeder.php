@@ -66,6 +66,10 @@ class PermissionsSeeder extends Seeder
             'faq create',
             'faq edit',
             'faq delete',
+            'blog index',
+            'blog create',
+            'blog edit',
+            'blog delete',
         ];
         foreach ($permissions as $permission) {
             Permission::create([
