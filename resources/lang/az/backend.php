@@ -123,6 +123,7 @@ return array (
   'photo' => 'Şəkil',
   'photos' => 'Şəkillər',
   'popularPackage' => 'Məhşur paket',
+  'portfolio' => 'Portfolio',
   'position' => 'Vəzifə',
   'post' => 'Post',
   'posts' => 'Postlar',

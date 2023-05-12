@@ -77,8 +77,16 @@
                 @can('blog index')
                     <li>
                         <a href="{{ route('backend.blog.index') }}" class="waves-effect">
-                            <i class="ri-newspaper-line"></i>
+                            <i class="ri-file-list-3-fill"></i>
                             <span>@lang('backend.blog')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('portfolio index')
+                    <li>
+                        <a href="{{ route('backend.portfolio.index') }}" class="waves-effect">
+                            <i class="ri-star-fill"></i>
+                            <span>@lang('backend.portfolio')</span>
                         </a>
                     </li>
                 @endcan

@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\BlogController;
 use App\Http\Controllers\Api\FaqController;
 use App\Http\Controllers\Api\PackageController;
 use App\Http\Controllers\Api\PartnerController;
+use App\Http\Controllers\Api\PortfolioController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\SliderController;
 use App\Http\Controllers\Api\TeamController;
@@ -23,6 +24,7 @@ Route::apiResource('/team',TeamController::class)->only('index');
 Route::apiResource('/partner',PartnerController::class)->only('index'); 
 Route::apiResource('/faq',FaqController::class)->only('index'); 
 Route::apiResource('/blog',BlogController::class)->only(['index','show']); 
+Route::apiResource('/portfolio',PortfolioController::class)->only('index'); 
 
 
 

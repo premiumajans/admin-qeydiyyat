@@ -124,6 +124,7 @@ return array (
   'photo' => 'Photo',
   'photos' => 'Photos',
   'popularPackage' => 'Most popular package',
+  'portfolio' => 'Portfolio',
   'position' => 'Position',
   'post' => 'Post',
   'posts' => 'Posts',

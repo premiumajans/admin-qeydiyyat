@@ -70,6 +70,10 @@ class PermissionsSeeder extends Seeder
             'blog create',
             'blog edit',
             'blog delete',
+            'portfolio index',
+            'portfolio create',
+            'portfolio edit',
+            'portfolio delete',
         ];
         foreach ($permissions as $permission) {
             Permission::create([

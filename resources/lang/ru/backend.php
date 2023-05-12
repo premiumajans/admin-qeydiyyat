@@ -18,6 +18,7 @@ return array (
   'packageComponentChoose' => 'Выбрать компоненты пакета',
   'packages' => 'Пакеты',
   'popularPackage' => 'Самый популярный пакет',
+  'portfolio' => 'портфолио',
   'price' => 'Цена',
   'selectAll' => 'Выбрать все',
   'service' => 'Услуга',
