@@ -39,6 +39,7 @@ return array (
   'code' => 'Kod',
   'completed' => 'Bitmiş layihələr',
   'congrats' => 'Təbriklər!',
+  'contact-info' => 'Şirkət məlumatları',
   'contact-us' => 'Bizimlə əlaqə',
   'content' => 'Kontent',
   'content-size' => 'Əgər "Kontent" hissəsindən şəkil əlavə edirsinizsə, ölçülərini 510x510 etməyiniz mütləqdir,əks təqdirdə saytın görünüşündə problemlər yaranacaq.',

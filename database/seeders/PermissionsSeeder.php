@@ -74,6 +74,10 @@ class PermissionsSeeder extends Seeder
             'portfolio create',
             'portfolio edit',
             'portfolio delete',
+            'contact-info index',
+            'contact-info create',
+            'contact-info edit',
+            'contact-info delete',
         ];
         foreach ($permissions as $permission) {
             Permission::create([

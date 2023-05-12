@@ -90,6 +90,14 @@
                         </a>
                     </li>
                 @endcan
+                @can('contact-info index')
+                    <li>
+                        <a href="{{ route('backend.contact-info.index') }}" class="waves-effect">
+                            <i class="ri-building-fill"></i>
+                            <span>@lang('backend.contact-info')</span>
+                        </a>
+                    </li>
+                @endcan
                 <li class="menu-title">@lang('backend.site-setting')</li>
                 @can('languages index')
                     <li>

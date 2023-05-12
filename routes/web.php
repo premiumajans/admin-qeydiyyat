@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\PartnerController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\ContactInfoController;
 use App\Http\Controllers\Backend\PortfolioController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,7 @@ Route::group(['as' => 'backend.', 'middleware' => 'auth:sanctum', 'backendLangua
     Route::get('/faq/{id}/delete', [FaqController::class, 'destroy'])->name('faq.destroy');
     Route::get('/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blog.destroy');
     Route::get('/portfolio/{id}/delete', [PortfolioController::class, 'destroy'])->name('portfolio.destroy');
+    Route::get('/contact-info/{id}/delete', [ContactInfoController::class, 'destroy'])->name('contact-info.destroy');
 
     Route::resource('/site-languages', BSiteLan::class);
     Route::resource('/settings', BSetting::class);
@@ -71,6 +73,7 @@ Route::group(['as' => 'backend.', 'middleware' => 'auth:sanctum', 'backendLangua
     Route::resource('/faq', FaqController::class)->except(['destroy','show']);
     Route::resource('/blog', BlogController::class)->except(['destroy','show']);
     Route::resource('/portfolio', PortfolioController::class)->except(['destroy','show']);
+    Route::resource('/contact-info', ContactInfoController::class)->except(['destroy','show']);
  
     
 

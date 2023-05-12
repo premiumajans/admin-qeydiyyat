@@ -3,6 +3,7 @@
 return array (
   'annualyPrice' => 'Годовая цена',
   'blog' => 'Блог',
+  'contact-info' => 'Информация о компании',
   'count' => 'Число',
   'error' => 'Что-то пошло не так',
   'exchange' => 'Обмен',

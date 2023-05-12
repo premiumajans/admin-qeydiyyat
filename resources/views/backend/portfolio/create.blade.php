@@ -1,5 +1,5 @@
 @extends('master.backend')
-@section('title',__('menus.slider'))
+@section('title',__('backend.portfolio'))
 @section('content')
     <div class="main-content">
         <div class="page-content">
@@ -7,14 +7,14 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-9">
                         <div class="card">
-                            <form action="{{ route('backend.slider.store') }}" class="needs-validation" novalidate
+                            <form action="{{ route('backend.portfolio.store') }}" class="needs-validation" novalidate
                                   method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="col-12">
                                         <div
                                             class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mb-sm-0">@lang('menus.slider')</h4>
+                                            <h4 class="mb-sm-0">@lang('backend.portfolio')</h4>
                                         </div>
                                     </div>
                                     <ul class="nav nav-pills nav-justified" role="tablist">
@@ -38,6 +38,17 @@
                                             </div>
                                             <div class="invalid-feedback">
                                                 @lang('backend.image') @lang('messages.not-correct')
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>@lang('backend.link') <span class="text-danger">*</span></label>
+                                            <input type="text" name="link" class="form-control" required=""
+                                                   id="validationCustom">
+                                            <div class="valid-feedback">
+                                                @lang('backend.link') @lang('messages.is-correct')
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                @lang('backend.link') @lang('messages.not-correct')
                                             </div>
                                         </div>
                                         @foreach(active_langs() as $lan)

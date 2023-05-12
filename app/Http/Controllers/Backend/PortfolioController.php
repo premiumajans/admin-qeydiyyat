@@ -29,15 +29,15 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         abort_if(Gate::denies('portfolio create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        try {
+        /* try { */
             $portfolio = new Portfolio();
             $portfolio->image = upload('portfolios', $request->file('image'));
+            $portfolio->link = $request->link;
             $portfolio->save();
             foreach (active_langs() as $active_lang) {
-                $translation = new portfolioTranslation();
+                $translation = new PortfolioTranslation();
                 $translation->title = $request->title[$active_lang->code];
                 $translation->content = $request->content[$active_lang->code];
-                $translation->link = $request->link[$active_lang->code];
                 $translation->alt = $request->alt[$active_lang->code];
                 $translation->locale = $active_lang->code;
                 $translation->portfolio_id = $portfolio->id;
@@ -45,10 +45,10 @@ class PortfolioController extends Controller
             }
             alert()->success(__('messages.success'));
             return redirect(route('backend.portfolio.index'));
-        } catch (Exception $e) {
+        /* } catch (Exception $e) {
             alert()->error(__('backend.error'));
             return redirect(route('backend.portfolio.index'));
-        }
+        } */
     }
 
     public function edit($id)
@@ -64,13 +64,15 @@ class PortfolioController extends Controller
         try {
             DB::transaction(function () use ($request, $portfolio) {
                 if ($request->hasFile('image')) {
-                    unlink((public_path($portfolio->image)));
+                    if(file_exists($portfolio->image)){
+                         unlink((public_path($portfolio->image)));
+                    }
                     $portfolio->image = upload('portfolios', $request->file('image'));
+                    $portfolio->link =  $request->link;
                 }
                 foreach (active_langs() as $lang) {
                     $portfolio->translate($lang->code)->title = $request->title[$lang->code];
                     $portfolio->translate($lang->code)->content = $request->content[$lang->code];
-                    $portfolio->translate($lang->code)->link = $request->link[$lang->code];
                     $portfolio->translate($lang->code)->alt = $request->alt[$lang->code];
                 }
                 $portfolio->save();

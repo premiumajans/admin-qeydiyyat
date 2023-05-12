@@ -39,6 +39,7 @@ return array (
   'code' => 'Code',
   'completed' => 'Completed projects',
   'congrats' => 'Congratulations!',
+  'contact-info' => 'Company info',
   'contact-us' => 'Contact Us',
   'content' => 'Content',
   'content-size' => 'If you add an image from the "Content" section, you must make it 510x510, otherwise there will be problems with the appearance of the site.',

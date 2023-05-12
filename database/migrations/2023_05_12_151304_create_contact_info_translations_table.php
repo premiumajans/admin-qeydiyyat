@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('contact_info_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('contact_info_id')
+                ->constrained('contact_infos')
+                ->onDelete('cascade');
+            $table->string('title');
+            $table->text('link');
+            $table->string('locale')->index();
+            $table->unique(['contact_info_id', 'locale']);
         });
     }
 
