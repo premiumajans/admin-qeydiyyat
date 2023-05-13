@@ -15,5 +15,5 @@ return [
     'info-not-found'=>'Təəssüf ki, məlumat tapılmadı.',
     'is-correct' => 'düzgün daxil edildi!',
     'not-correct' => 'düzgün daxil edilməmişdir!',
-
+    'message' => 'Sorğunuz uğurla göndərildi',
 ];

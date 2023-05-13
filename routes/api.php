@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\BlogController;
+use App\Http\Controllers\Api\ContactController;
+use App\Http\Controllers\Api\ContactInfoController;
 use App\Http\Controllers\Api\FaqController;
 use App\Http\Controllers\Api\PackageController;
 use App\Http\Controllers\Api\PartnerController;
@@ -25,6 +27,8 @@ Route::apiResource('/partner',PartnerController::class)->only('index');
 Route::apiResource('/faq',FaqController::class)->only('index'); 
 Route::apiResource('/blog',BlogController::class)->only(['index','show']); 
 Route::apiResource('/portfolio',PortfolioController::class)->only('index'); 
+Route::apiResource('/contact-info',ContactInfoController::class)->only('index'); 
+Route::post('/contact',[ContactController::class, 'store'])->name('contact.store'); 
 
 
 

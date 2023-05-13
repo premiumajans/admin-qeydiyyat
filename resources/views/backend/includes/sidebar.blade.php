@@ -98,6 +98,14 @@
                         </a>
                     </li>
                 @endcan
+                @can('contact index')
+                    <li>
+                        <a href="{{ route('backend.contact.index') }}" class="waves-effect">
+                            <i class="ri-mail-line"></i>
+                            <span>@lang('backend.contact')</span>
+                        </a>
+                    </li>
+                @endcan
                 <li class="menu-title">@lang('backend.site-setting')</li>
                 @can('languages index')
                     <li>

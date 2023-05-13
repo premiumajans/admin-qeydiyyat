@@ -78,6 +78,9 @@ class PermissionsSeeder extends Seeder
             'contact-info create',
             'contact-info edit',
             'contact-info delete',
+            'contact index',
+            'contact show',
+            'contact delete',
         ];
         foreach ($permissions as $permission) {
             Permission::create([

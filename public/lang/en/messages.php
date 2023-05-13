@@ -15,4 +15,5 @@ return [
     'info-not-found' => 'Sorry, no information found.',
     'is-correct' => 'entered correctly!',
     'not-correct' => 'wrongly entered!',
+    'message' => 'Your request has been sent successfully',
 ];

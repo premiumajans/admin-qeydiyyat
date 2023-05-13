@@ -3,6 +3,7 @@
 return array (
   'annualyPrice' => 'Годовая цена',
   'blog' => 'Блог',
+  'contact' => 'Контакты',
   'contact-info' => 'Информация о компании',
   'count' => 'Число',
   'error' => 'Что-то пошло не так',
@@ -23,5 +24,6 @@ return array (
   'price' => 'Цена',
   'selectAll' => 'Выбрать все',
   'service' => 'Услуга',
+  'subject' => 'Предмет',
   'year' => 'Ежегодно',
 );
