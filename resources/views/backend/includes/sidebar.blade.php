@@ -13,7 +13,7 @@
                 @can('slider index')
                     <li>
                         <a href="{{ route('backend.slider.index') }}" class="waves-effect">
-                            <i class="ri-equalizer-line"></i>
+                            <i class="ri-equalizer-fill"></i>
                             <span>@lang('menus.slider')</span>
                         </a>
                     </li>
@@ -21,7 +21,7 @@
                 @can('service index')
                 <li>
                     <a href="{{ route('backend.service.index') }}" class="waves-effect">
-                        <i class="ri-customer-service-line"></i>
+                        <i class="ri-customer-service-fill"></i>
                         <span>@lang('menus.services')</span>
                     </a>
                 </li>
@@ -37,7 +37,7 @@
                 @can('packages index')
                     <li>
                         <a href="{{ route('backend.packages.index') }}" class="waves-effect">
-                            <i class="ri-wallet-2-line"></i>
+                            <i class="ri-wallet-2-fill"></i>
                             <span>@lang('menus.packages')</span>
                         </a>
                     </li>
@@ -45,7 +45,7 @@
                 @can('package-components index')
                     <li>
                         <a href="{{ route('backend.package-components.index') }}" class="waves-effect">
-                            <i class="ri-wallet-2-line"></i>
+                            <i class="ri-wallet-2-fill"></i>
                             <span>@lang('menus.package-components')</span>
                         </a>
                     </li>
@@ -53,7 +53,7 @@
                 @can('team index')
                     <li>
                         <a href="{{ route('backend.team.index') }}" class="waves-effect">
-                            <i class="ri-group-line"></i>
+                            <i class="ri-group-fill"></i>
                             <span>@lang('menus.team')</span>
                         </a>
                     </li>
@@ -101,7 +101,7 @@
                 @can('contact index')
                     <li>
                         <a href="{{ route('backend.contact.index') }}" class="waves-effect">
-                            <i class="ri-mail-line"></i>
+                            <i class="ri-mail-fill"></i>
                             <span>@lang('backend.contact')</span>
                         </a>
                     </li>

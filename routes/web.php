@@ -40,6 +40,9 @@ Route::group(['as' => 'backend.', 'middleware' => 'auth:sanctum', 'backendLangua
     Route::get('/site-language/{id}/change-status', [BSiteLan::class, 'siteLanStatus'])->name('siteLanStatus');
     Route::get('/packages/{id}/package-choose', [PackageController::class, 'packageChoose'])->name('packages.packageChoose');
     Route::post('/packages/{id}/package-store', [PackageController::class, 'packageStore'])->name('packages.packageStore');
+    Route::get('/slider/{id}/change-status', [SliderController::class, 'sliderStatus'])->name('sliderStatus');
+    Route::get('/slider/{id}/change-order', [SliderController::class, 'sliderOrder'])->name('sliderOrder');
+
     //Delete
     Route::get('/site-languages/{id}/delete', [BSiteLan::class, 'delSiteLang'])->name('delSiteLang');
     Route::get('/settings/{id}/delete', [BSetting::class, 'delSetting'])->name('delSetting');

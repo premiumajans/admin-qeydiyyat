@@ -20,6 +20,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->string('title');
             $table->text('content');
+            $table->text('slug');
             $table->string('alt');
             $table->string('locale')->index();
             $table->unique(['slider_id', 'locale']);

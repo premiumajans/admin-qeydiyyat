@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\SiteLanguage;
 use App\Models\Slider;
 use App\Models\SliderTranslation;
 use Exception;
@@ -30,8 +31,16 @@ class SliderController extends Controller
     {
         abort_if(Gate::denies('slider create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         try {
+            $languages = SiteLanguage::where('status', 1)->get();
             $slider = new Slider();
+            if (empty(Slider::first())) {
+                $sliderOrder = 1;
+            } else {
+                $sliderOrder = Slider::all()->last()->order + 1;
+            }
             $slider->image = upload('sliders', $request->file('image'));
+            $slider->order = $sliderOrder;
+            $slider->status = 1;
             $slider->save();
             foreach (active_langs() as $active_lang) {
                 $translation = new SliderTranslation();
@@ -94,4 +103,56 @@ class SliderController extends Controller
             return redirect()->route('backend.slider.index');
         }
     }
+
+    public function sliderOrder(Request $request, $id)
+    {
+        abort_if(Gate::denies('slider edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        try {
+            $slider = Slider::find($id);
+            $orders = [];
+            foreach (Slider::orderBy('order', 'asc')->get() as $sl) {
+                $orders[] = $sl->order;
+            }
+            if ($request->direction == "up") {
+                $prevKey = (array_search($slider->order, $orders)) - 1;
+                Slider::where('order', $orders[$prevKey])->update([
+                    'order' => $slider->order,
+                ]);
+                $slider->update(['order' => $orders[$prevKey]]);
+            } else {
+                if ($slider->order == end($orders)) {
+                    Slider::where('order', $orders[count($orders) - 2])->update([
+                        'order' => $slider->order
+                    ]);
+                    $slider->update(['order' => $orders[count($orders) - 2]]);
+                } elseif ($slider->order == $orders[0]) {
+                    Slider::where('order', $orders[1])->update([
+                        'order' => $slider->order
+                    ]);
+                    $slider->update(['order' => $orders[1]]);
+                } else {
+                    $nextKey = (array_search($slider->order, $orders)) + 1;
+                    Slider::where('order', $orders[$nextKey])->update([
+                        'order' => $orders[$nextKey - 1],
+                    ]);
+                    $slider->update(['order' => $orders[$nextKey]]);
+                }
+            }
+            return redirect(route('backend.slider.index'));
+        } catch (Exception $e) {
+            return redirect(route('backend.slider.index'));
+        }
+    }
+
+    public function sliderStatus($id)
+    {
+        $status = Slider::where('id', $id)->value('status');
+        if ($status == 1) {
+            Slider::where('id', $id)->update(['status' => 0]);
+        } else {
+            Slider::where('id', $id)->update(['status' => 1]);
+        }
+        return redirect()->route('backend.slider.index');
+    }
+
 }
