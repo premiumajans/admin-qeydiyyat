@@ -16,7 +16,7 @@ class ContactInfoController extends Controller
     public function index()
     {
         abort_if(Gate::denies('contact-info index'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $contacInfos = ContactInfo::all();
+        $contactInfos = ContactInfo::all();
         return view('backend.contact-info.index', get_defined_vars());
     }
 
@@ -30,18 +30,10 @@ class ContactInfoController extends Controller
     {
         abort_if(Gate::denies('contact-info create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         try {
-            $contacInfo = new ContactInfo();
-            $contacInfo->icon = $request->icon;
-            $contacInfo->save();
-            foreach (active_langs() as $active_lang) {
-                $translation = new ContactInfoTranslation();
-                $translation->title = $request->title[$active_lang->code];
-                $translation->content = $request->content[$active_lang->code];
-                $translation->alt = $request->alt[$active_lang->code];
-                $translation->locale = $active_lang->code;
-                $translation->contacInfo_id = $contacInfo->id;
-                $translation->save();
-            }
+            ContactInfo::create([
+                'title'=>$request->title,
+                'link'=>$request->link,
+            ]);
             alert()->success(__('messages.success'));
             return redirect(route('backend.contact-info.index'));
         } catch (Exception $e) {
@@ -53,26 +45,18 @@ class ContactInfoController extends Controller
     public function edit($id)
     {
         abort_if(Gate::denies('contact-info edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $contacInfo = ContactInfo::findOrFail($id);
+        $contactInfo = ContactInfo::findOrFail($id);
         return view('backend.contact-info.update', get_defined_vars());
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, ContactInfo $contactInfo)
     {
         abort_if(Gate::denies('contact-info edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $contacInfo = ContactInfo::findOrFail($id);
-        $contacInfo->update([
-            'icon'=>$request->icon
-        ]);
         try {
-            DB::transaction(function () use ($request, $contacInfo) {
-                foreach (active_langs() as $lang) {
-                    $contacInfo->translate($lang->code)->title = $request->title[$lang->code];
-                    $contacInfo->translate($lang->code)->content = $request->content[$lang->code];
-                    $contacInfo->translate($lang->code)->alt = $request->alt[$lang->code];
-                }
-                $contacInfo->save();
-            });
+            $contactInfo->update([
+                'title'=>$request->title,
+                'link'=>$request->link,
+            ]);
             alert()->success(__('messages.success'));
             return redirect(route('backend.contact-info.index'));
         } catch (Exception $e) {

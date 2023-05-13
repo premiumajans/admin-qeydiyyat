@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('contact_infos', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('link')->nullable();
             $table->timestamps();
         });
     }
