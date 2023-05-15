@@ -23,6 +23,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\ContactInfoController;
 use App\Http\Controllers\Backend\PortfolioController;
+use App\Http\Controllers\Backend\StatisticController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -62,6 +63,7 @@ Route::group(['as' => 'backend.', 'middleware' => 'auth:sanctum', 'backendLangua
     Route::get('/portfolio/{id}/delete', [PortfolioController::class, 'destroy'])->name('portfolio.destroy');
     Route::get('/contact-info/{id}/delete', [ContactInfoController::class, 'destroy'])->name('contact-info.destroy');
     Route::get('/contact/{id}/delete', [ContactController::class, 'destroy'])->name('contact.destroy');
+    Route::get('/statistic/{id}/delete', [StatisticController::class, 'destroy'])->name('statistic.destroy');
 
     Route::resource('/site-languages', BSiteLan::class);
     Route::resource('/settings', BSetting::class);
@@ -80,8 +82,7 @@ Route::group(['as' => 'backend.', 'middleware' => 'auth:sanctum', 'backendLangua
     Route::resource('/portfolio', PortfolioController::class)->except(['destroy','show']);
     Route::resource('/contact-info', ContactInfoController::class)->except(['destroy','show']);
     Route::resource('/contact', ContactController::class)->except(['destroy','create','store','edit','update']);
- 
-    
+    Route::resource('/statistic', StatisticController::class)->except(['destroy','show']);
 
     Route::get('/clear', function () {
         Artisan::call('cache:clear');

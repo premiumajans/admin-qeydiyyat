@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\PartnerController;
 use App\Http\Controllers\Api\PortfolioController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\SliderController;
+use App\Http\Controllers\Api\StatisticController;
 use App\Http\Controllers\Api\TeamController;
 use App\Http\Controllers\Api\WhyChooseUsController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,7 @@ Route::apiResource('/faq',FaqController::class)->only('index');
 Route::apiResource('/blog',BlogController::class)->only(['index','show']); 
 Route::apiResource('/portfolio',PortfolioController::class)->only('index'); 
 Route::apiResource('/contact-info',ContactInfoController::class)->only('index'); 
+Route::apiResource('/statistic',StatisticController::class)->only('index'); 
 Route::post('/contact',[ContactController::class, 'store'])->name('contact.store'); 
 
 

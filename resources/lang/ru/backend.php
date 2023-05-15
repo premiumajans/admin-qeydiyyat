@@ -14,6 +14,7 @@ return array (
   'lastname' => 'Фамилия',
   'month' => 'Ежемесячно',
   'monthlyPrice' => 'Ежемесячная цена',
+  'number' => 'Количество',
   'package-components' => 'Компоненты пакета',
   'package-content' => 'Содержание пакета',
   'package-name' => 'Имя пакета',
@@ -24,6 +25,7 @@ return array (
   'price' => 'Цена',
   'selectAll' => 'Выбрать все',
   'service' => 'Услуга',
+  'statistic' => 'Статистика',
   'subject' => 'Предмет',
   'year' => 'Ежегодно',
 );

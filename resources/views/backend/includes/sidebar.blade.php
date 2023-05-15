@@ -106,6 +106,14 @@
                         </a>
                     </li>
                 @endcan
+                @can('statistic index')
+                    <li>
+                        <a href="{{ route('backend.statistic.index') }}" class="waves-effect">
+                            <i class="ri-bar-chart-2-fill"></i>
+                            <span>@lang('backend.statistic')</span>
+                        </a>
+                    </li>
+                @endcan
                 <li class="menu-title">@lang('backend.site-setting')</li>
                 @can('languages index')
                     <li>
