@@ -1,5 +1,5 @@
 @extends('master.backend')
-@section('title',__('menus.services'))
+@section('title',__('backend.service'))
 @section('styles')
 <link href="{{ asset('backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
     type="text/css" />
@@ -16,25 +16,36 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-body">
+                    <div class="col-12">
+                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                            <h4 class="mb-sm-0">@lang('backend.service'):</h4>
+                            <a href="https://fontawesome.com/v4/icons/" target="_blank">
+                                Bu linkə tıklayaraq iconların sadəcə classlarını götürerek icon fomrasına qoya bilersiz
+                            </a>
+                            <a href="{{ route('backend.service.create') }}" class="btn btn-primary mb-3"><i
+                                    class="fas fa-plus"></i> &nbsp;@lang('backend.add-new')
+                            </a>
+                        </div>
+                    </div>
                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>#</th>
+                                <th>@lang('backend.icon'):</th>
                                 <th>@lang('backend.title'):</th>
                                 <th>@lang('backend.content'):</th>
-                                <th>@lang('backend.alt'):</th>
                                 <th>@lang('backend.time'):</th>
                                 <th>@lang('backend.actions'):</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($servicies as $i=>$service)
+                            @foreach($services as $i=>$service)
                             <tr>
                                 <td class="text-center">{{ $i+=1 }}</td>
-                                <td class="text-center">{{ $service->translate('az')->title }}</td>
+                                <td class="text-center"><i class="{{ $service->icon }}"></i></td>
+                                <td class="text-center">{{ $service/* ->translate('az') */->title }}</td>
                                 <td class="text-center">{{ $service->content }}</td>
-                                <td class="text-center">{{ $service->alt }}</td>
                                 <td>{{ date('d.m.Y H:i:s',strtotime($service->created_at))}}</td>
                                 <td class="text-center">
                                     <a class="btn btn-primary"

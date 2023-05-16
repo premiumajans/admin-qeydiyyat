@@ -16,6 +16,9 @@
                                             class="page-title-box d-sm-flex align-items-center justify-content-between">
                                             <h4 class="mb-sm-0">@lang('menus.why-choose-us')</h4>
                                         </div>
+                                        <a href="https://fontawesome.com/v4/icons/" class="d-flex justify-content-center mb-3" target="_blank">
+                                            Bu linkə tıklayaraq iconların sadəcə classlarını götürerek icon fomrasına qoya bilersiz
+                                        </a>
                                     </div>
                                     <ul class="nav nav-pills nav-justified" role="tablist">
                                         @foreach(active_langs() as $lan)
@@ -71,20 +74,6 @@
                                                         </div>
                                                         <div class="invalid-feedback">
                                                             @lang('backend.content') @lang('messages.not-correct')
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label>@lang('backend.alt') <span
-                                                                class="text-danger">*</span></label>
-                                                        <input name="alt[{{ $lan->code }}]" type="text"
-                                                               class="form-control" required=""
-                                                               data-parsley-minlength="6"
-                                                               placeholder="@lang('backend.alt')">
-                                                        <div class="valid-feedback">
-                                                            @lang('backend.alt') @lang('messages.is-correct')
-                                                        </div>
-                                                        <div class="invalid-feedback">
-                                                            @lang('backend.alt') @lang('messages.not-correct')
                                                         </div>
                                                     </div>
                                                 </div>

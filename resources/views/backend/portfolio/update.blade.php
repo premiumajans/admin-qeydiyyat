@@ -1,5 +1,5 @@
 @extends('master.backend')
-@section('title',__('menus.slider'))
+@section('title',__('menus.portfolio'))
 @section('content')
     <div class="main-content">
         <div class="page-content">
@@ -7,7 +7,7 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-9">
                         <div class="card">
-                            <form action="{{ route('backend.slider.update',$slider->id) }}" class="needs-validation"
+                            <form action="{{ route('backend.portfolio.update',$portfolio->id) }}" class="needs-validation"
                                   novalidate
                                   method="post" enctype="multipart/form-data">
                                 @csrf
@@ -16,13 +16,13 @@
                                     <div class="col-12">
                                         <div
                                             class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mb-sm-0">@lang('backend.new') @lang('menus.slider')</h4>
+                                            <h4 class="mb-sm-0">@lang('backend.new') @lang('menus.portfolio')</h4>
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <label>@lang('backend.image'):</label>
                                         <div>
-                                            <img width="100%" height="auto" src="{{ asset($slider->image) }}">
+                                            <img width="100%" height="auto" src="{{ asset($portfolio->image) }}">
                                         </div>
                                     </div>
                                     <ul class="nav nav-pills nav-justified" role="tablist">
@@ -51,7 +51,7 @@
                                                         <input name="title[{{ $lan->code }}]" type="text"
                                                                class="form-control" required=""
                                                                data-parsley-minlength="6"
-                                                               value="{{ $slider->translate($lan->code)->title }}">
+                                                               value="{{ $portfolio->translate($lan->code)->title }}">
                                                         <div class="valid-feedback">
                                                             @lang('backend.title') @lang('messages.is-correct')
                                                         </div>
@@ -64,7 +64,7 @@
                                                                 class="text-danger">*</span></label>
                                                         <textarea name="content[{{ $lan->code }}]" type="text"
                                                                   class="form-control" required=""
-                                                                  rows="6">{{ $slider->translate($lan->code)->content }}</textarea>
+                                                                  rows="6">{{ $portfolio->translate($lan->code)->content }}</textarea>
                                                         <div class="valid-feedback">
                                                             @lang('backend.content') @lang('messages.is-correct')
                                                         </div>
@@ -76,7 +76,7 @@
                                                         <label>@lang('backend.alt') <span
                                                                 class="text-danger">*</span></label>
                                                         <input name="alt[{{ $lan->code }}]" type="text"
-                                                            value="{{ $slider->translate($lan->code)->alt }}"
+                                                            value="{{ $portfolio->translate($lan->code)->alt }}"
                                                                class="form-control" required=""
                                                                data-parsley-minlength="6"
                                                                placeholder="@lang('backend.alt')">

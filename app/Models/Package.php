@@ -15,7 +15,6 @@ class Package extends Model implements TranslatableContract
         'monthlyPrice', 
         'annualyPrice', 
         'exchange', 
-        'alt',
     ];
     
     protected $guarded = [];

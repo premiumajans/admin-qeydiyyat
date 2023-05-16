@@ -40,7 +40,6 @@ class PackageController extends Controller
                 $translation->monthlyPrice = $request->monthlyPrice[$active_lang->code];
                 $translation->annualyPrice = $request->annualyPrice[$active_lang->code];
                 $translation->exchange = $request->exchange[$active_lang->code];
-                $translation->alt = $request->alt[$active_lang->code];
                 $translation->locale = $active_lang->code;
                 $translation->package_id = $package->id;
                 $translation->save();
@@ -73,7 +72,6 @@ class PackageController extends Controller
                     $package->translate($lang->code)->monthlyPrice = $request->monthlyPrice[$lang->code];
                     $package->translate($lang->code)->annualyPrice = $request->annualyPrice[$lang->code];
                     $package->translate($lang->code)->exchange = $request->exchange[$lang->code];
-                    $package->translate($lang->code)->alt = $request->alt[$lang->code];
                 }
                 $package->save();
             });

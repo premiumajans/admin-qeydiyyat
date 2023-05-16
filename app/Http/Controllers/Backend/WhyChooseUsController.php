@@ -37,7 +37,6 @@ class WhyChooseUsController extends Controller
                 $translation = new WhyChooseUsTranslation();
                 $translation->title = $request->title[$active_lang->code];
                 $translation->content = $request->content[$active_lang->code];
-                $translation->alt = $request->alt[$active_lang->code];
                 $translation->locale = $active_lang->code;
                 $translation->why_choose_us_id = $why_choose_us->id;
                 $translation->save();
@@ -69,7 +68,6 @@ class WhyChooseUsController extends Controller
                 foreach (active_langs() as $lang) {
                     $why_choose_us->translate($lang->code)->title = $request->title[$lang->code];
                     $why_choose_us->translate($lang->code)->content = $request->content[$lang->code];
-                    $why_choose_us->translate($lang->code)->alt = $request->alt[$lang->code];
                 }
                 $why_choose_us->save();
             });

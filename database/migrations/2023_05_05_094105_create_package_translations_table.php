@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('monthlyPrice');
             $table->string('annualyPrice');
             $table->string('exchange');
-            $table->string('alt');
             $table->string('locale')->index();
             $table->unique(['package_id', 'locale']);
         });

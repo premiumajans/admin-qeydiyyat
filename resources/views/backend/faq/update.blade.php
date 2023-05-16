@@ -61,20 +61,6 @@
                                                             @lang('backend.content') @lang('messages.not-correct')
                                                         </div>
                                                     </div>
-                                                    <div class="mb-3">
-                                                        <label>@lang('backend.alt')</label>
-                                                        <input name="alt[{{ $lan->code }}]" type="text"
-                                                            value="{{ $faq->translate($lan->code)->alt }}"
-                                                               class="form-control"
-                                                               data-parsley-minlength="6"
-                                                               placeholder="@lang('backend.alt')">
-                                                        <div class="valid-feedback">
-                                                            @lang('backend.alt') @lang('messages.is-correct')
-                                                        </div>
-                                                        <div class="invalid-feedback">
-                                                            @lang('backend.alt') @lang('messages.not-correct')
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach

@@ -14,6 +14,6 @@ class ServiceTranslation extends Model
     protected $fillable = [
         'title',
         'content',
-        'alt',
+        'icon',
     ];
 }

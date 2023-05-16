@@ -17,6 +17,5 @@ class WhyChooseUs extends Model implements TranslatableContract
     public $translatedAttributes = [
         'title',
         'content',
-        'alt',
     ];
 }

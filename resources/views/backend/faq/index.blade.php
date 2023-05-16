@@ -31,7 +31,6 @@
                                 <th>#</th>
                                 <th>@lang('backend.title'):</th>
                                 <th>@lang('backend.content'):</th>
-                                <th>@lang('backend.alt'):</th>
                                 <th>@lang('backend.time'):</th>
                                 <th>@lang('backend.actions'):</th>
                             </tr>
@@ -42,7 +41,6 @@
                                 <td class="text-center">{{ $i+=1 }}</td>
                                 <td class="text-center">{{ $faq->translate('az')->title }}</td>
                                 <td class="text-center">{{ $faq->translate('az')->content }}</td>
-                                <td class="text-center">{{ $faq->alt }}</td>
                                 <td>{{ date('d.m.Y H:i:s',strtotime($faq->created_at))}}</td>
                                 <td class="text-center">
                                     <a class="btn btn-primary"

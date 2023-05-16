@@ -35,7 +35,6 @@
                                 <th>@lang('backend.icon'):</th>
                                 <th>@lang('backend.title'):</th>
                                 <th>@lang('backend.content'):</th>
-                                <th>@lang('backend.alt'):</th>
                                 <th>@lang('backend.time'):</th>
                                 <th>@lang('backend.actions'):</th>
                             </tr>
@@ -45,9 +44,8 @@
                             <tr>
                                 <td class="text-center">{{ $i+=1 }}</td>
                                 <td class="text-center"><i class="{{ $why_choose_us->icon }}"></i></td>
-                                <td class="text-center">{{ $why_choose_us->translate('az')->title }}</td>
+                                <td class="text-center">{{ $why_choose_us/* ->translate('az') */->title }}</td>
                                 <td class="text-center">{{ $why_choose_us->content }}</td>
-                                <td class="text-center">{{ $why_choose_us->alt }}</td>
                                 <td>{{ date('d.m.Y H:i:s',strtotime($why_choose_us->created_at))}}</td>
                                 <td class="text-center">
                                     <a class="btn btn-primary"

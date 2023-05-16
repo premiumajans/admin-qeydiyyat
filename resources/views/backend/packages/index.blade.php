@@ -32,7 +32,6 @@
                                 <th>@lang('backend.package-name'):</th>
                                 <th>@lang('backend.monthlyPrice'):</th>
                                 <th>@lang('backend.annualyPrice'):</th>
-                                <th>@lang('backend.alt'):</th>
                                 <th>@lang('backend.time'):</th>
                                 <th>@lang('backend.actions'):</th>
                             </tr>

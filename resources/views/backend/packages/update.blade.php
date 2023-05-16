@@ -83,21 +83,6 @@
                                                             <option value="RUBL" {{ ($package->translate($lan->code)->exchange == 'RUBL') ? 'selected' : '' }}>RUBL</option>
                                                         </select>
                                                     </div>
-                                                    <div class="mb-3">
-                                                        <label>@lang('backend.alt') <span
-                                                                class="text-danger">*</span></label>
-                                                        <input name="alt[{{ $lan->code }}]" type="text"
-                                                                value="{{ $package->translate($lan->code)->alt }}"
-                                                                class="form-control" required=""
-                                                                data-parsley-minlength="6"
-                                                                placeholder="@lang('backend.alt')">
-                                                        <div class="valid-feedback">
-                                                            @lang('backend.alt') @lang('messages.is-correct')
-                                                        </div>
-                                                        <div class="invalid-feedback">
-                                                            @lang('backend.alt') @lang('messages.not-correct')
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach

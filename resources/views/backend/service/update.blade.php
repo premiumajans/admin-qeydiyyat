@@ -1,5 +1,5 @@
 @extends('master.backend')
-@section('title',__('backend.faq'))
+@section('title',__('backend.service'))
 @section('content')
     <div class="main-content">
         <div class="page-content">
@@ -7,21 +7,26 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-9">
                         <div class="card">
-                            <form action="{{ route('backend.faq.store') }}" class="needs-validation" novalidate
+                            <form action="{{ route('backend.service.update',$service->id) }}" class="needs-validation"
+                                  novalidate
                                   method="post" enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 <div class="card-body">
                                     <div class="col-12">
                                         <div
                                             class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                            <h4 class="mb-sm-0">@lang('backend.faq')</h4>
+                                            <h4 class="mb-sm-0">@lang('backend.new') @lang('backend.service')</h4>
                                         </div>
+                                        <a href="https://fontawesome.com/v4/icons/" class="d-flex justify-content-center mb-3" target="_blank">
+                                            Bu linkə tıklayaraq iconların sadəcə classlarını götürerek icon fomrasına qoya bilersiz
+                                        </a>
                                     </div>
                                     <ul class="nav nav-pills nav-justified" role="tablist">
                                         @foreach(active_langs() as $lan)
                                             <li class="nav-item waves-effect waves-light">
                                                 <a class="nav-link @if($loop->first) active @endif" data-bs-toggle="tab"
-                                                   href="#{{ $lan->code }}" role="tab" aria-selected="true">
+                                                    href="#{{ $lan->code }}" role="tab" aria-selected="true">
                                                     <span class="d-block d-sm-none"><i>{{ $lan->code }}</i></span>
                                                     <span class="d-none d-sm-block">{{ $lan->name }}</span>
                                                 </a>
@@ -29,6 +34,20 @@
                                         @endforeach
                                     </ul>
                                     <div class="tab-content p-3 text-muted">
+                                        <div class="mb-3">
+                                            <label>@lang('backend.icon') <span class="text-danger">*</span></label>
+                                            <input name="icon" type="text"
+                                                    value="{{ $service->icon }}"
+                                                   class="form-control" required=""
+                                                   data-parsley-minlength="6"
+                                                   placeholder="@lang('backend.icon')">
+                                            <div class="valid-feedback">    
+                                                @lang('backend.title') @lang('messages.is-correct')
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                @lang('backend.title') @lang('messages.not-correct')
+                                            </div>
+                                        </div>
                                         @foreach(active_langs() as $lan)
                                             <div class="tab-pane @if($loop->first) active show @endif"
                                                  id="{{ $lan->code }}" role="tabpanel">
@@ -38,7 +57,7 @@
                                                         <input name="title[{{ $lan->code }}]" type="text"
                                                                class="form-control" required=""
                                                                data-parsley-minlength="6"
-                                                               placeholder="@lang('backend.title')">
+                                                               value="{{ $service->translate($lan->code)->title }}">
                                                         <div class="valid-feedback">
                                                             @lang('backend.title') @lang('messages.is-correct')
                                                         </div>
@@ -49,10 +68,9 @@
                                                     <div class="mb-3">
                                                         <label>@lang('backend.content') <span
                                                                 class="text-danger">*</span></label>
-                                                        <textarea type="text" name="content[{{ $lan->code }}]"
-                                                                  required class="form-control" id="validationCustom"
-                                                                  rows="7"
-                                                                  placeholder="@lang('backend.content')"></textarea>
+                                                        <textarea name="content[{{ $lan->code }}]" type="text"
+                                                                  class="form-control" required=""
+                                                                  rows="6">{{ $service->translate($lan->code)->content }}</textarea>
                                                         <div class="valid-feedback">
                                                             @lang('backend.content') @lang('messages.is-correct')
                                                         </div>
@@ -84,4 +102,3 @@
         </div>
     </div>
 @endsection
-

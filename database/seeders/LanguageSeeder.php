@@ -10,8 +10,8 @@ class LanguageSeeder extends Seeder
 {
     public function run()
     {
-        $az = SiteLanguage::create(['name'=>'Azərbaycan','code' => 'az','icon' => 'images/flags/az.png','status' => 1]);
-        $en = SiteLanguage::create(['name'=>'English','code' => 'en','icon' => 'images/flags/en.jpg','status' => 1]);
-        $ru = SiteLanguage::create(['name'=>'Русский','code' => 'ru','icon' => 'images/flags/ru.jpg','status' => 1]);
+        $az = SiteLanguage::create(['name'=>'Azərbaycan','code' => 'az','icon' => 'backend/images/flags/az.png','status' => 1]);
+        $en = SiteLanguage::create(['name'=>'English','code' => 'en','icon' => 'backend/images/flags/en.jpg','status' => 1]);
+        $ru = SiteLanguage::create(['name'=>'Русский','code' => 'ru','icon' => 'backend/images/flags/ru.jpg','status' => 1]);
     }
 }
