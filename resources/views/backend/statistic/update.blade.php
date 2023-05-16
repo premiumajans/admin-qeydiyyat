@@ -33,7 +33,7 @@
                                     <div class="tab-content p-3 text-muted">
                                         <div class="mb-3">
                                             <label>@lang('backend.number') <span class="text-danger">*</span></label>
-                                            <input name="number" type="text"
+                                            <input name="number" type="number"
                                                 value="{{ $statistic->number }}"
                                                 class="form-control" required=""
                                                 data-parsley-minlength="6"
