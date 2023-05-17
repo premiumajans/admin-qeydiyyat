@@ -6,6 +6,7 @@ return array (
   'contact' => 'Контакты',
   'contact-info' => 'Информация о компании',
   'count' => 'Число',
+  'domain_time_increase_price' => 'Цена увеличения времени домена',
   'error' => 'Что-то пошло не так',
   'exchange' => 'Обмен',
   'exchange-choose' => 'Обмен выбрать',
@@ -27,5 +28,6 @@ return array (
   'service' => 'Услуга',
   'statistic' => 'Статистика',
   'subject' => 'Предмет',
+  'transfer_price' => 'Стоимость перевода',
   'year' => 'Ежегодно',
 );

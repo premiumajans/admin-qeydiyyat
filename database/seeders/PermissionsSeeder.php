@@ -85,6 +85,10 @@ class PermissionsSeeder extends Seeder
             'statistic create',
             'statistic edit',
             'statistic delete',
+            'domain index',
+            'domain create',
+            'domain edit',
+            'domain delete',
         ];
         foreach ($permissions as $permission) {
             Permission::create([

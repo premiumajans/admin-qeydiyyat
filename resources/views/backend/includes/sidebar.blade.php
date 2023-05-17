@@ -50,6 +50,14 @@
                         </a>
                     </li>
                 @endcan
+                @can('domain index')
+                    <li>
+                        <a href="{{ route('backend.domain.index') }}" class="waves-effect">
+                            <i class="ri-wallet-2-fill"></i>
+                            <span>@lang('backend.domain')</span>
+                        </a>
+                    </li>
+                @endcan
                 @can('team index')
                     <li>
                         <a href="{{ route('backend.team.index') }}" class="waves-effect">
