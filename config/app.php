@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
-    'name' => env('APP_NAME', 'Dirnis.az'),
+    'name' => env('APP_NAME', 'Qeydiyyat.az'),
 
     'env' => env('APP_ENV', 'production'),
 
     'debug' => (bool) env('APP_DEBUG', false),
 
-    'url' => env('APP_URL', 'http://dirnis.az'),
+    'url' => env('APP_URL', 'https://qeydiyyat.az'),
 
     'asset_url' => env('ASSET_URL'),
 

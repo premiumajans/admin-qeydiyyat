@@ -49,7 +49,7 @@ return array (
   'count' => 'Say',
   'created' => 'Yaradıldı',
   'current-password' => 'Cari şifrə',
-  'dashboard' => 'İdarə Paneli',
+  'dashboard' => 'İdarə paneli',
   'deactive' => 'Passiv',
   'decline' => 'Ləğv et',
   'default' => 'Susmaya görə',
@@ -80,6 +80,7 @@ return array (
   'history' => 'Tarixçə',
   'home-page' => 'Ana Səhifə',
   'icon' => 'İkon',
+  'icon-links' => 'Bu linkə tıklayaraq iconların sadəcə classlarını götürerek icon fomrasına qoya bilersiz',
   'image' => 'Şəkil',
   'informations' => 'Məlumatlarım',
   'keywords' => 'Açar sözlər',
@@ -180,4 +181,5 @@ return array (
   'views' => 'Izlənmə',
   'writers' => 'Yazıçılar',
   'year' => 'İllik',
+  'icon-links' => 'Bu linkə tıklayıb ikonların sadəcə classlarını götürerek icon formasına qoya bilersiz',
 );

@@ -22,7 +22,7 @@
                                             <div class="mb-3">
                                                 <label>@lang('backend.domain') <span class="text-danger"></span></label>
                                                 <input name="title" type="text" class="form-control" value="{{ $domain->title }}"
-                                                    data-parsley-minlength="6" placeholder="@lang('backend.domain')">
+                                                    data-parsley-minlength="6" placeholder="@lang('backend.domain')" required>
                                                 <div class="valid-feedback">
                                                     @lang('backend.domain') @lang('messages.is-correct')
                                                 </div>
@@ -35,7 +35,7 @@
                                             <div class="mb-3">
                                                 <label>@lang('backend.price') <span class="text-danger"></span></label>
                                                 <input name="price" type="number" class="form-control" value="{{ $domain->price }}"
-                                                    data-parsley-minlength="6" placeholder="@lang('backend.price')">
+                                                    data-parsley-minlength="6" placeholder="@lang('backend.price')" required>
                                                 <div class="valid-feedback">
                                                     @lang('backend.price') @lang('messages.is-correct')
                                                 </div>
@@ -48,7 +48,7 @@
                                             <div class="mb-3">
                                                 <label>@lang('backend.domain_time_increase_price') <span class="text-danger"></span></label>
                                                 <input name="domain_time_increase_price" type="number" class="form-control" 
-                                                value="{{ $domain->domain_time_increase_price }}"
+                                                value="{{ $domain->domain_time_increase_price }}" required
                                                     data-parsley-minlength="6" placeholder="@lang('backend.domain_time_increase_price')">
                                                 <div class="valid-feedback">
                                                     @lang('backend.domain_time_increase_price') @lang('messages.is-correct')
@@ -62,7 +62,7 @@
                                             <div class="mb-3">
                                                 <label>@lang('backend.transfer_price') <span class="text-danger"></span></label>
                                                 <input name="transfer_price" type="number" class="form-control"
-                                                value="{{ $domain->transfer_price }}"
+                                                value="{{ $domain->transfer_price }}" required
                                                     data-parsley-minlength="6" placeholder="@lang('backend.transfer_price')">
                                                 <div class="valid-feedback">
                                                     @lang('backend.transfer_price') @lang('messages.is-correct')

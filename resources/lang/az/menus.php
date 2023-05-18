@@ -13,7 +13,7 @@ return array (
   'partner' => 'Əməkdaş',
   'pricing' => 'Paketlər',
   'products' => 'Məhsullar',
-  'services' => 'Xidmətlər',
+  'services' => 'Servislər',
   'slider' => 'Slayder',
   'team' => 'Komanda',
   'technical-support' => 'Texniki dəstək',

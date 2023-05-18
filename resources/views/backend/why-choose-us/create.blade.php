@@ -17,7 +17,7 @@
                                             <h4 class="mb-sm-0">@lang('menus.why-choose-us')</h4>
                                         </div>
                                         <a href="https://fontawesome.com/v4/icons/" class="d-flex justify-content-center mb-3" target="_blank">
-                                            Bu linkə tıklayaraq iconların sadəcə classlarını götürerek icon fomrasına qoya bilersiz
+                                            @lang('backend.icon-links')
                                         </a>
                                     </div>
                                     <ul class="nav nav-pills nav-justified" role="tablist">

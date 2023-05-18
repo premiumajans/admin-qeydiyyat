@@ -34,6 +34,7 @@ return array (
   'certificates' => 'Certificates',
   'change-password' => 'Change Password',
   'chechk-unchechk' => 'Select All / Select None',
+  'check-uncheck' => 'Select All / Select None',
   'clean-all' => 'Clean all',
   'cnew-password' => 'Confirm New Password',
   'code' => 'Code',
@@ -75,7 +76,7 @@ return array (
   'follow-us' => 'Follow us',
   'front_photo' => 'Front Photo',
   'general' => 'General',
-  'give-permission' => 'Give Permissions',
+  'give-permission' => 'Give permission',
   'given-date' => 'Gived date',
   'history' => 'History',
   'home-page' => 'Home',
@@ -180,4 +181,5 @@ return array (
   'write-contact-us' => 'If you would like to see your name on this list, write to the "<a href="/contact-us">Contact Us</a>" page.',
   'writers' => 'Writers',
   'year' => 'Yearly',
+  'icon-links' => 'By clicking on this link, you can simply take the classes of the icons and put them in icon form',
 );

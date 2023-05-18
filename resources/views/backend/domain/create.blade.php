@@ -19,8 +19,8 @@
                                     <div class="tab-content p-3 text-muted">
                                         <div class="form-group row">
                                             <div class="mb-3">
-                                                <label>@lang('backend.domain') <span class="text-danger"></span></label>
-                                                <input name="title" type="text" class="form-control"
+                                                <label>@lang('backend.domain') <span class="text-danger">*</span></label>
+                                                <input name="title" type="text" class="form-control" required
                                                     data-parsley-minlength="6" placeholder="@lang('backend.domain')">
                                                 <div class="valid-feedback">
                                                     @lang('backend.domain') @lang('messages.is-correct')
@@ -32,8 +32,8 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="mb-3">
-                                                <label>@lang('backend.price') <span class="text-danger"></span></label>
-                                                <input name="price" type="number" class="form-control"
+                                                <label>@lang('backend.price') <span class="text-danger">*</span></label>
+                                                <input name="price" type="number" class="form-control" required
                                                     data-parsley-minlength="6" placeholder="@lang('backend.price')">
                                                 <div class="valid-feedback">
                                                     @lang('backend.price') @lang('messages.is-correct')
@@ -45,8 +45,8 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="mb-3">
-                                                <label>@lang('backend.domain_time_increase_price') <span class="text-danger"></span></label>
-                                                <input name="domain_time_increase_price" type="number" class="form-control"
+                                                <label>@lang('backend.domain_time_increase_price') <span class="text-danger">*</span></label>
+                                                <input name="domain_time_increase_price" type="number" class="form-control" required
                                                     data-parsley-minlength="6" placeholder="@lang('backend.domain_time_increase_price')">
                                                 <div class="valid-feedback">
                                                     @lang('backend.domain_time_increase_price') @lang('messages.is-correct')
@@ -58,8 +58,8 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="mb-3">
-                                                <label>@lang('backend.transfer_price') <span class="text-danger"></span></label>
-                                                <input name="transfer_price" type="number" class="form-control"
+                                                <label>@lang('backend.transfer_price') <span class="text-danger">*</span></label>
+                                                <input name="transfer_price" type="number" class="form-control" required
                                                     data-parsley-minlength="6" placeholder="@lang('backend.transfer_price')">
                                                 <div class="valid-feedback">
                                                     @lang('backend.transfer_price') @lang('messages.is-correct')

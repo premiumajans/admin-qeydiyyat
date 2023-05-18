@@ -20,7 +20,7 @@
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                             <h4 class="mb-sm-0">@lang('menus.why-choose-us'):</h4>
                             <a href="https://fontawesome.com/v4/icons/" target="_blank">
-                                Bu linkə tıklayaraq iconların sadəcə classlarını götürerek icon fomrasına qoya bilersiz
+                                @lang('backend.icon-links')
                             </a>
                             <a href="{{ route('backend.why-choose-us.create') }}" class="btn btn-primary mb-3"><i
                                     class="fas fa-plus"></i> &nbsp;@lang('backend.add-new')
