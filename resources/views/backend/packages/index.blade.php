@@ -43,7 +43,6 @@
                                 <td class="text-center">{{ $package->translate('az')->title }}</td>
                                 <td class="text-center">{{ $package->translate('az')->monthlyPrice." ".$package->translate('az')->exchange }}</td>
                                 <td class="text-center">{{ $package->translate('az')->annualyPrice." ".$package->translate('az')->exchange }}</td>
-                                <td class="text-center">{{ $package->translate('az')->title }}</td>
                                 <td>{{ date('d.m.Y H:i:s',strtotime($package->created_at))}}</td>
                                 <td class="text-center">
                                     <a class="btn btn-primary"

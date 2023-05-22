@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             PermissionsSeeder::class,
             UserSeeder::class,
+            ContactInfoSeeder::class,
         ]);
     }
 }
