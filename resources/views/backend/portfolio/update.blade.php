@@ -49,7 +49,7 @@
                                                     <div class="mb-3">
                                                         <label>@lang('backend.title') <span class="text-danger">*</span></label>
                                                         <input name="title[{{ $lan->code }}]" type="text"
-                                                               class="form-control" required=""
+                                                               class="form-control" 
                                                                data-parsley-minlength="6"
                                                                value="{{ $portfolio->translate($lan->code)->title }}">
                                                         <div class="valid-feedback">
@@ -63,7 +63,7 @@
                                                         <label>@lang('backend.content') <span
                                                                 class="text-danger">*</span></label>
                                                         <textarea name="content[{{ $lan->code }}]" type="text"
-                                                                  class="form-control" required=""
+                                                                  class="form-control" 
                                                                   rows="6">{{ $portfolio->translate($lan->code)->content }}</textarea>
                                                         <div class="valid-feedback">
                                                             @lang('backend.content') @lang('messages.is-correct')
@@ -77,7 +77,7 @@
                                                                 class="text-danger">*</span></label>
                                                         <input name="alt[{{ $lan->code }}]" type="text"
                                                             value="{{ $portfolio->translate($lan->code)->alt }}"
-                                                               class="form-control" required=""
+                                                               class="form-control"
                                                                data-parsley-minlength="6"
                                                                placeholder="@lang('backend.alt')">
                                                         <div class="valid-feedback">

@@ -29,7 +29,7 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         abort_if(Gate::denies('service create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        /* try { */
+        try {
             $service = new Service();
             $service->icon = $request->icon;
             $service->save();
@@ -43,10 +43,10 @@ class ServiceController extends Controller
             }
             alert()->success(__('messages.success'));
             return redirect(route('backend.service.index'));
-        /* } catch (Exception $e) {
+        } catch (Exception $e) {
             alert()->error(__('backend.error'));
             return redirect(route('backend.service.index'));
-        } */
+        }
     }
 
     public function edit($id)
@@ -60,7 +60,7 @@ class ServiceController extends Controller
     {
         abort_if(Gate::denies('service edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $service = Service::findOrFail($id);
-        $service->icon = $service->icon;
+        $service->icon = $request->icon;
         try {
             DB::transaction(function () use ($request, $service) {
                 foreach (active_langs() as $lang) {

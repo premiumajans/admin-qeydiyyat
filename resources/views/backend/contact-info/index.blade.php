@@ -23,6 +23,9 @@
                                     class="fas fa-plus"></i> &nbsp;@lang('backend.add-new')
                             </a>
                         </div>
+                        <p class="text-center alert alert-warning">
+                            @lang('backend.setting')
+                        </p> 
                     </div>
                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">

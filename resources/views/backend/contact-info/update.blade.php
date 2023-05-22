@@ -16,6 +16,9 @@
                                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                                             <h4 class="mb-sm-0">@lang('backend.new') @lang('backend.contact-info')</h4>
                                         </div>
+                                        <p class="text-center alert alert-warning">
+                                            @lang('backend.setting')
+                                        </p> 
                                     </div>
                                     <div class="tab-content p-3 text-muted">
                                         <div class="form-group row">

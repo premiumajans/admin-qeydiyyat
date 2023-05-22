@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
             $table->string('slug');
-            $table->string('alt');
+            $table->string('alt')->nullable();
             $table->string('locale')->index();
             $table->unique(['blog_id', 'locale']);
         });

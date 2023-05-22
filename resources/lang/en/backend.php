@@ -81,6 +81,7 @@ return array (
   'history' => 'History',
   'home-page' => 'Home',
   'icon' => 'Icon',
+  'icon-links' => 'By clicking on this link, you can simply take the classes of the icons and put them in icon form',
   'image' => 'İmage',
   'informations' => 'İnformations',
   'keywords' => 'Keywords',
@@ -147,6 +148,7 @@ return array (
   'send-message' => 'Send Message',
   'seo-settings' => 'Seo Settings',
   'service' => 'Service',
+  'setting' => 'When you enter information, please enter the information below instead of the title!!<br> "phone-1" number 1,<br> "phone-2" number 2,<br> "place-1" 1st place,<br> "place-2" 2nd place,<br> "email" email,<br> Give the instagram link you use as "instagram" link,<br> Give the facebook link you use as "facebook" link,<br>',
   'settings' => 'Settings',
   'sharedPostMe' => 'My Shared',
   'site-setting' => 'Site Settings',
@@ -181,5 +183,4 @@ return array (
   'write-contact-us' => 'If you would like to see your name on this list, write to the "<a href="/contact-us">Contact Us</a>" page.',
   'writers' => 'Writers',
   'year' => 'Yearly',
-  'icon-links' => 'By clicking on this link, you can simply take the classes of the icons and put them in icon form',
 );

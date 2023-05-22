@@ -10,7 +10,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::all();
-        return response()->json($blogs);
+        return response()->json(['blogs' => $blogs],200);
     }
 
     public function show(Blog $blog)

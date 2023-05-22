@@ -80,7 +80,7 @@ return array (
   'history' => 'Tarixçə',
   'home-page' => 'Ana Səhifə',
   'icon' => 'İkon',
-  'icon-links' => 'Bu linkə tıklayaraq iconların sadəcə classlarını götürerek icon fomrasına qoya bilersiz',
+  'icon-links' => 'Bu linkə tıklayıb ikonların sadəcə classlarını götürerek icon formasına qoya bilersiz',
   'image' => 'Şəkil',
   'informations' => 'Məlumatlarım',
   'keywords' => 'Açar sözlər',
@@ -147,6 +147,7 @@ return array (
   'send-message' => 'Mesajı Göndər',
   'seo-settings' => 'Seo Tənzimləmələri',
   'service' => 'Servis',
+  'setting' => 'Məlumat daxil etdiyiniz zaman başlıq yerine altda verilən məlumatları daxil edin!! <br>"phone-1" 1-ci nömrə,<br> "phone-2" 2-ci nömrə,<br> "place-1" 1-ci məkan,<br> "place-2" 2-ci məkan,<br> "email" email,<br> "instagram" link qisminə istifadə etdiyiniz instagram linkini verin,<br> "facebook" link qisminə istifadə etdiyiniz facebook linkini verin,<br>',
   'settings' => 'Tənzimləmələr',
   'sharedPostMe' => 'Paylaşdıqlarım',
   'site-setting' => 'Sayt tənzimləmələri',
@@ -181,5 +182,4 @@ return array (
   'views' => 'Izlənmə',
   'writers' => 'Yazıçılar',
   'year' => 'İllik',
-  'icon-links' => 'Bu linkə tıklayıb ikonların sadəcə classlarını götürerek icon formasına qoya bilersiz',
 );
