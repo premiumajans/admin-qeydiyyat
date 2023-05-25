@@ -447,7 +447,7 @@
     'username' => 'email',
     'email' => 'email',
     'views' => true,
-    'home' => 'admin/dashboard',
+    'home' => 'dashboard',
     'prefix' => '',
     'domain' => NULL,
     'limiters' => 
