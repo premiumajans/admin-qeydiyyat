@@ -18,7 +18,7 @@
                                             class="page-title-box d-sm-flex align-items-center justify-content-between">
                                             <h4 class="mb-sm-0">@lang('backend.new') @lang('backend.service')</h4>
                                         </div>
-                                        <a href="https://fontawesome.com/v4/icons/" class="d-flex justify-content-center mb-3" target="_blank">
+                                        <a href="https://fontawesome.com/v5/search" class="d-flex justify-content-center mb-3" target="_blank">
                                             Bu linkə tıklayaraq iconların sadəcə classlarını götürerek icon fomrasına qoya bilersiz
                                         </a>
                                     </div>
