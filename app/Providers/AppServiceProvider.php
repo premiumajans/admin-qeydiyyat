@@ -10,16 +10,17 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        
     }
 
     public function boot()
     {
-        $currentLanguage = SiteLanguage::where('code', app()->getLocale())->first();
+        /* $currentLanguage = SiteLanguage::where('code', app()->getLocale())->first();
         $languages = SiteLanguage::where('status', 1)->orderBy('id', 'desc')->get();
         view()->share([
             'languages' => $languages,
             'currentLanguage' => $currentLanguage,
             'locale' => app()->getLocale(),
-        ]);
+        ]); */
     }
 }

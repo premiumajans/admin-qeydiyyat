@@ -9,7 +9,7 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        $portfolios = Portfolio::latest()->get();
+        $portfolios = Portfolio::latest()->paginate(4);
         return response()->json($portfolios);
     }
 }

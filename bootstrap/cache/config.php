@@ -13,7 +13,7 @@
   'analytics' => 
   array (
     'view_id' => '252687391',
-    'service_account_credentials_json' => 'C:\\laragon\\www\\qeydiyyat\\public\\google\\dirnis-google.json',
+    'service_account_credentials_json' => 'C:\\laragon\\www\\admin-qeydiyyat\\public\\google\\dirnis-google.json',
     'cache_lifetime_in_minutes' => 1440,
     'cache' => 
     array (
@@ -22,16 +22,16 @@
   ),
   'app' => 
   array (
-    'name' => 'Qeydiyyat',
+    'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'https://demo.qeydiyyat.az.com',
+    'url' => 'http://localhost',
     'asset_url' => NULL,
     'timezone' => 'Asia/Baku',
     'locale' => 'az',
     'fallback_locale' => 'az',
     'faker_locale' => 'en_US',
-    'key' => 'base64:GbOAlCl0PoVpz11CKAw9WgdfFiU8dP3elD2rkOQV9JA=',
+    'key' => 'base64:iP3RII4BzxiDJDdYu1mUg0AcJdRPw1alkRy06a6Xsjs=',
     'cipher' => 'AES-256-CBC',
     'maintenance' => 
     array (
@@ -225,7 +225,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\laragon\\www\\qeydiyyat\\storage\\framework/cache/data',
+        'path' => 'C:\\laragon\\www\\admin-qeydiyyat\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -269,7 +269,7 @@
         'driver' => 'octane',
       ),
     ),
-    'prefix' => 'qeydiyyat_cache_',
+    'prefix' => 'laravel_cache_',
   ),
   'cors' => 
   array (
@@ -368,7 +368,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'qeydiyyat_database_',
+        'prefix' => 'laravel_database_',
       ),
       'default' => 
       array (
@@ -398,14 +398,14 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\qeydiyyat\\storage\\app',
+        'root' => 'C:\\laragon\\www\\admin-qeydiyyat\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\qeydiyyat\\storage\\app/public',
-        'url' => 'https://demo.qeydiyyat.az.com/storage',
+        'root' => 'C:\\laragon\\www\\admin-qeydiyyat\\storage\\app/public',
+        'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
       ),
@@ -424,7 +424,7 @@
     ),
     'links' => 
     array (
-      'C:\\laragon\\www\\qeydiyyat\\public\\storage' => 'C:\\laragon\\www\\qeydiyyat\\storage\\app/public',
+      'C:\\laragon\\www\\admin-qeydiyyat\\public\\storage' => 'C:\\laragon\\www\\admin-qeydiyyat\\storage\\app/public',
     ),
   ),
   'fortify-options' => 
@@ -447,7 +447,7 @@
     'username' => 'email',
     'email' => 'email',
     'views' => true,
-    'home' => 'dashboard',
+    'home' => '/dashboard',
     'prefix' => '',
     'domain' => NULL,
     'limiters' => 
@@ -548,8 +548,8 @@
       'rtl' => false,
       'fonts' => 
       array (
-        0 => 'C:\\laragon\\www\\qeydiyyat\\config\\laravolt/../fonts/OpenSans-Bold.ttf',
-        1 => 'C:\\laragon\\www\\qeydiyyat\\config\\laravolt/../fonts/rockwell.ttf',
+        0 => 'C:\\laragon\\www\\admin-qeydiyyat\\config\\laravolt/../fonts/OpenSans-Bold.ttf',
+        1 => 'C:\\laragon\\www\\admin-qeydiyyat\\config\\laravolt/../fonts/rockwell.ttf',
       ),
       'foregrounds' => 
       array (
@@ -685,13 +685,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\laragon\\www\\qeydiyyat\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\admin-qeydiyyat\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\laragon\\www\\qeydiyyat\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\admin-qeydiyyat\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -743,7 +743,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\laragon\\www\\qeydiyyat\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\admin-qeydiyyat\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -755,11 +755,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'mail.turquoise-az.com',
-        'port' => '465',
-        'encryption' => 'tls',
-        'username' => 'info@turquoise-az.com',
-        'password' => 'Baku2022!',
+        'host' => 'mailhog',
+        'port' => '1025',
+        'encryption' => NULL,
+        'username' => NULL,
+        'password' => NULL,
         'timeout' => NULL,
         'local_domain' => NULL,
       ),
@@ -801,15 +801,15 @@
     ),
     'from' => 
     array (
-      'address' => 'info@turquoise-az.com',
-      'name' => 'Turquoise MMC',
+      'address' => 'hello@example.com',
+      'name' => 'Laravel',
     ),
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\laragon\\www\\qeydiyyat\\resources\\views/vendor/mail',
+        0 => 'C:\\laragon\\www\\admin-qeydiyyat\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -928,7 +928,7 @@
       2 => '127.0.0.1',
       3 => '127.0.0.1:8000',
       4 => '::1',
-      5 => 'demo.qeydiyyat.az.com',
+      5 => 'localhost',
     ),
     'guard' => 
     array (
@@ -967,7 +967,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\laragon\\www\\qeydiyyat\\storage\\framework/sessions',
+    'files' => 'C:\\laragon\\www\\admin-qeydiyyat\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -976,7 +976,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'qeydiyyat_session',
+    'cookie' => 'laravel_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
@@ -1006,8 +1006,8 @@
       'autoClose' => false,
       'toast_position' => 'top-end',
       'toast_close_button' => true,
-      'timer' => '5000',
-      'auto_display_error_messages' => true,
+      'timer' => 6000,
+      'auto_display_error_messages' => false,
     ),
     'customClass' => 
     array (
@@ -1069,8 +1069,8 @@
     ),
     'scan_paths' => 
     array (
-      0 => 'C:\\laragon\\www\\qeydiyyat\\app',
-      1 => 'C:\\laragon\\www\\qeydiyyat\\resources',
+      0 => 'C:\\laragon\\www\\admin-qeydiyyat\\app',
+      1 => 'C:\\laragon\\www\\admin-qeydiyyat\\resources',
     ),
     'ui_url' => 'dil',
     'database' => 
@@ -1084,9 +1084,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\laragon\\www\\qeydiyyat\\resources\\views',
+      0 => 'C:\\laragon\\www\\admin-qeydiyyat\\resources\\views',
     ),
-    'compiled' => 'C:\\laragon\\www\\qeydiyyat\\storage\\framework\\views',
+    'compiled' => 'C:\\laragon\\www\\admin-qeydiyyat\\storage\\framework\\views',
   ),
   'image' => 
   array (
@@ -1095,7 +1095,7 @@
   'livewire' => 
   array (
     'class_namespace' => 'App\\Http\\Livewire',
-    'view_path' => 'C:\\laragon\\www\\qeydiyyat\\resources\\views/livewire',
+    'view_path' => 'C:\\laragon\\www\\admin-qeydiyyat\\resources\\views/livewire',
     'layout' => 'layouts.app',
     'asset_url' => NULL,
     'app_url' => NULL,
@@ -1204,7 +1204,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'C:\\laragon\\www\\qeydiyyat',
+    'remote_sites_path' => 'C:\\laragon\\www\\admin-qeydiyyat',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

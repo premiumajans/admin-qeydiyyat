@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="text-muted text-center font-size-18">
-                    <img src="{{asset('frontend/images/logo.png')}}" height="90">
+                    <img style="object-fit: contain;" src="{{asset('backend\images\logo-back.png')}}" height="100" width="400">
                 </h4>
                 <div class="p-3">
                     <form class="form-horizontal mt-3 needs-validation" novalidate method="POST" action="{{ route('login') }}">
